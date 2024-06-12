@@ -1,0 +1,8 @@
+.backimg{
+    background-image: url(../../images/location-1.jpg);
+    background-repeat: no-repeat;
+}
+
+img :hover .child {
+    transform: scale(1.2);
+}
