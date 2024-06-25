@@ -23,10 +23,10 @@ export default function PrivacyPolicy() {
         <div className="bg-[#f0eee9] font-bold text-5xl text-center py-32">
           <h1>Privacy Policy </h1>
         </div>
-        <h1 className="text-3xl font-bold text-center py-10">Terms Of Use</h1>
+        <h1 className="text-3xl max-sm:text-xl font-bold text-center py-10">Terms Of Use</h1>
         {data.map((d, index) => (
-          <div className="flex mx-10 my-10 gap-x-10  justify-center ">
-            <div className="font-bold bg-gray-50 text-2xl w-[400px] border-l-2  ">
+          <div className="flex flex-wrap max-sm:my-4 mx-10 my-10 gap-x-10  justify-center ">
+            <div className="font-bold bg-gray-50 text-2xl max-sm:text-lg w-[400px] border-l-2  ">
               <h1
                 onClick={() => {
                   setShow({

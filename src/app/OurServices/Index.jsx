@@ -27,7 +27,7 @@ export default function OurServices() {
         </div>
         {/* --------------Review Section ----------------- */}
         <div className="bg-[#f0eee9] py-20">
-          <div className="flex justify-between">
+          <div className="flex flex-wrap justify-between">
             <div>
               <p className="text-red-500 font-semibold">TOP PROPERTISE</p>
               <h1 className="text-3xl font-bold py-4">
@@ -48,7 +48,7 @@ export default function OurServices() {
                 </button>
               </div>
             </div>
-            <div className="mx-24">
+            <div className="mx-22 max-sm:mx-9 max-sm:w-[350px]">
               <ReviewCart />
             </div>
           </div>
@@ -57,16 +57,15 @@ export default function OurServices() {
         {/* -----------------FAQ ------------------- */}
         <div className="text-center font-bold pt-10 ">
           <h3 className=" text-red-500 ">FAQS</h3>
-          <h1 className="text-3xl">Quick Answers To Questions</h1>
+          <h1 className="text-3xl max-sm:text-xl">Quick Answers To Questions</h1>
           <div>
             <Faqs />
           </div>
         </div>
         {/* ------------------Become Partners=------------------- */}
         <div>
-          <div className=" flex items-center font-bold pl-20 bg-[#e1e1e1] my-20 mx-10 rounded-3xl ">
+          <div className=" flex flex-wrap max-sm:pl-10 items-center font-bold pl-20 bg-[#e1e1e1] my-20 mx-10 rounded-3xl ">
             <div>
-              {" "}
               <p className="uppercase text-md text-red-500 py-4">
                 become partners
               </p>
@@ -82,7 +81,7 @@ export default function OurServices() {
             </div>
             <div>
               <img
-                className=" translate-x-24 -translate-y-5 scale-110"
+                className=" translate-x-24 -translate-y-5 scale-110 max-sm:-translate-x-4 max-sm:-translate-y-0"
                 src={banner}
                 alt=""
               />

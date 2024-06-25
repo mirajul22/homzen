@@ -5,7 +5,7 @@ import agent2 from "../../images/agent-2.jpg";
 
 export default function ReviewCart() {
   return (
-    <div className=" flex gap-10 w-full ">
+    <div className=" flex flex-wrap gap-8 w-full  ">
       {cartData.map((data) => (
         <div className="w-[400px] px-4 pt-10 h-[400px] rounded-2xl bg-white">
           <span className="flex text-yellow-500 gap-2 text-2xl py-2">
@@ -44,9 +44,9 @@ const cartData = [
 
 function ReviewCart2() {
   return (
-    <div className=" flex gap-10 m-10 ">
+    <div className=" flex flex-wrap gap-10 m-10 ">
       {cartData.map((data) => (
-        <div className="border-2 rounded-3xl bg-gray-100 p-6">
+        <div className="border-2 w-[350px] rounded-3xl bg-gray-100 p-6">
           <span className="flex text-yellow-500 gap-2 text-2xl py-2">
             <FaStar />
             <FaStar />

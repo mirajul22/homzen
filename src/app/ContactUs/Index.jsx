@@ -13,14 +13,14 @@ export default function ContactUs() {
         <div className="bg-[#f0eee9] font-bold text-5xl text-center py-32">
           <h1>Contact Us </h1>
         </div>
-        <div className="my-20 flex">
+        <div className="my-20 flex flex-wrap w-[70%]">
           <form className="my-20 " action="">
-            <h1 className="text-5xl font-bold mx-4 ">Drop Us A Line</h1>
-            <p className="text-xl font-bold m-4 text-[#6f6f6f]">
+            <h1 className="text-5xl max-sm:text-3xl font-bold mx-4 ">Drop Us A Line</h1>
+            <p className="text-xl max-sm:text-lg max-sm:w-[350px] font-bold m-4 text-[#6f6f6f]">
               Feel free to connect with us online channels for updates, news,
               and more.
             </p>
-            <div className="flex  flex-wrap font-bold text-xl my-4 w-[80%]">
+            <div className="flex flex-wrap font-bold text-xl max-sm:text-md my-4 w-[70%]">
               <div className="m-4 ">
                 <p className="font-bold h-10 ">Full Name: </p>
                 <input
@@ -56,7 +56,7 @@ export default function ContactUs() {
               <div className="m-4">
                 <p className="font-bold h-10 ">Your Message: </p>
                 <input
-                  className="border-2 mx-4 rounded-lg w-[730px] h-[200px] "
+                  className="border-2 mx-4 rounded-lg w-[730px] h-[200px] max-sm:w-[350px] "
                   type="text"
                   placeholder=" Message"
                 />
@@ -69,7 +69,7 @@ export default function ContactUs() {
               Send Message
             </button>
           </form>
-          <div className="w-[60%] mr-4 h-[500px] px-4 my-32 bg-[#f4eded] rounded-2xl ">
+          <div className="w-[30%] mr-4 max-sm:m-0 max-sm:ml-10 max-sm:w-[350px] h-[500px] px-4 my-32 bg-[#f4eded] rounded-2xl ">
             <h1 className="text-2xl font-bold m-4">Contact Us</h1>
             <h1 className="text-xl font-bold m-4 ">Address:</h1>
             <p className="text-lg m-4 ">

@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Buttons() {
   return (
-    <div className="flex gap-x-5  cursor-pointer  ">
+    <div className="flex gap-x-5  max-sm:flex-col cursor-pointer  ">
       {buttonData.map((data, i) => (
         <div
           key={i}

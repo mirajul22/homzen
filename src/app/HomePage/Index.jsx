@@ -27,6 +27,9 @@ import { responsive, teamData } from "../../components/teamCart/teamData";
 
 export default function HomePage() {
   const [counter, setCounter] = useState(false);
+  const [showButton] = useState(true);
+
+ 
 
   //------------------------  our team section -------------------------
 
@@ -36,14 +39,12 @@ export default function HomePage() {
   return (
     <div>
       <header>
-        <div>
           <Header />
-        </div>
       </header>
       <hero>
         <div className="heroimg">
-          <div className=" text-center pt-[200px] pl-10 pr-10 text-white ">
-            <div className="h-[174px] font-bold text-7xl flex gap-2 justify-center">
+          <div className=" text-center pt-[200px] px-10 text-white ">
+            <div className="h-[174px] font-bold text-7xl max-sm:text-4xl max-sm:h-[100px] max-sm:flex-col flex gap-2 justify-center">
               <h1>Find Your</h1>
               <section class="animation">
                 <div>
@@ -64,7 +65,7 @@ export default function HomePage() {
                 house?
               </p>
             </div>
-            <div className="font-bold mt-10">
+            <div className="font-bold mt-10 ">
               <button
                 className="p-4 rounded-md mr-1 bg-white text-black bg-[hsla(0,0%,100%,.1)] "
                 type="text"
@@ -79,7 +80,7 @@ export default function HomePage() {
               </button>
             </div>
             {/* find propertise section  -----start---------- */}
-            <div className="flex font-semibold w-full rounded-lg bg-white justify-between text-black m-[-4px] h-20 p-4 text-left">
+            <div className="flex max-sm:flex-col max-sm:h-52 font-semibold w-full rounded-lg bg-white justify-between text-black m-[-4px] h-20 p-4 text-left">
               <div>
                 <h1>Keyword</h1>
                 <input type="text" placeholder="Search Keyword." />
@@ -106,8 +107,8 @@ export default function HomePage() {
                   <span>Advanced</span>
                 </Link>
               </div>
-              <div className=" p-3 font-bold text-white bg-red-500 hover:bg-red-700 ">
-                <button className=" ">Find Propertise</button>
+              <div className=" max-sm:my-4 max-sm:text-center max-sm:rounded-lg  p-3 font-bold text-white bg-red-500 hover:bg-red-700 ">
+                <button>Find Propertise</button>
               </div>
             </div>
           </div>
@@ -119,9 +120,14 @@ export default function HomePage() {
           <p className="text-1xl text-red-500">FEATURED PROPERTIES</p>
           <h1 className="text-3xl ">Recommended For You</h1>
         </div>
-        <div className="flex justify-center gap-4 mb-5 ">
-          <Button2 />
-          <Buttons />
+        <div className="flex max-sm:ml-[150px] max-sm:flex-col justify-center gap-4 mb-5 ">
+          {showButton ? (
+            <Button2 />
+          ) : (
+            <Buttons />
+          )
+         }
+         
         </div>
         <div className="flex flex-wrap gap-8 p-8">
           <Cards />
@@ -135,7 +141,7 @@ export default function HomePage() {
         <div className=" text-center mb-10 pt-20 pb-10 bg-[#f0eee9]  ">
           <p className=" text-red-500 font-semibold  ">EXPLORE CITIES</p>
           <h1 className="font-bold text-3xl">Our Location For You</h1>
-          <div className="flex gap-10 m-10">
+          <div className="flex flex-wrap gap-8 m-10">
             <Cards2 />
             <Cards2 />
             <Cards2 />
@@ -155,10 +161,9 @@ export default function HomePage() {
               </span>{" "}
             </Link>
           </div>
-          <div className="flex justify-between mb-10">
+          <div className="flex flex-wrap max-sm:text-center justify-between mb-10">
             <div>
-              <p className="text-6xl px-20 py-5">
-                {" "}
+              <p className="text-6xl px-20 py-5 max-sm:px-36">
                 <span>
                   <FcHome />
                 </span>
@@ -169,7 +174,7 @@ export default function HomePage() {
                 <br /> diverse properties and expert guidance for a<br />{" "}
                 seamless buying experience.
               </p>
-              <Link className="font-semibold flex gap-3 items-center p-2">
+              <Link className="font-semibold flex gap-3 items-center  max-sm:justify-center p-2">
                 Learn More{" "}
                 <span className="text-red-500">
                   <FaArrowRight />
@@ -177,8 +182,8 @@ export default function HomePage() {
               </Link>
             </div>
             <div>
-              <p className="text-6xl px-20 py-5">
-                {" "}
+              <p className="text-6xl px-20 py-5 max-sm:px-36">
+          
                 <span>
                   <FcHome />
                 </span>
@@ -189,7 +194,7 @@ export default function HomePage() {
                 diverse variety of listings tailored precisely to suit
                 <br /> your unique lifestyle needs.
               </p>
-              <Link className="font-semibold flex gap-3 items-center p-2">
+              <Link className="font-semibold flex gap-3 max-sm:justify-center items-center p-2">
                 Learn More{" "}
                 <span className="text-red-500">
                   <FaArrowRight />
@@ -197,7 +202,7 @@ export default function HomePage() {
               </Link>
             </div>
             <div>
-              <p className="text-6xl px-20 py-5">
+              <p className="text-6xl px-20 py-5 max-sm:px-36">
                 {" "}
                 <span>
                   <FcHome />
@@ -209,7 +214,7 @@ export default function HomePage() {
                 <br /> strategies, showcasing your property's best features
                 <br /> for a successful sale.
               </p>
-              <Link className="font-semibold flex gap-3 items-center p-2">
+              <Link className="font-semibold flex gap-3 items-center p-2  max-sm:justify-center">
                 Learn More{" "}
                 <span className="text-red-500">
                   <FaArrowRight />
@@ -222,8 +227,8 @@ export default function HomePage() {
             onEnter={() => setCounter(true)}
             onExit={() => setCounter(false)}
           >
-            <div className="flex justify-between pr-20">
-              <div className="font-bold flex items-start pt-10 pb-10 gap-4">
+            <div className="flex flex-wrap max-sm:justify-center justify-between pr-20 max-sm:pr-0 py-10 max-sm:pb-5">
+              <div className="font-bold flex items-start py-10 max-sm:py-1 gap-4">
                 {counter && (
                   <CountUp start={0} end={85}>
                     {({ countUpRef }) => (
@@ -243,7 +248,7 @@ export default function HomePage() {
                 </p>
               </div>
               {/* second */}
-              <div className="font-bold flex items-start pt-10 pb-10 gap-4">
+              <div className="font-bold flex items-start py-10 max-sm:py-1 gap-4">
                 {counter && (
                   <CountUp start={0} end={112}>
                     {({ countUpRef }) => (
@@ -263,7 +268,7 @@ export default function HomePage() {
                 </p>
               </div>
               {/* third */}
-              <div className="font-bold flex items-start pt-10 pb-10 gap-4">
+              <div className="font-bold flex items-start py-10 max-sm:py-1 gap-4">
                 {counter && (
                   <CountUp start={0} end={32}>
                     {({ countUpRef }) => (
@@ -283,7 +288,7 @@ export default function HomePage() {
                 </p>
               </div>
               {/* fourth */}
-              <div className="font-bold flex items-start pt-10 pb-10 gap-4">
+              <div className="font-bold flex items-start py-10 max-sm:py-2 gap-4">
                 {counter && (
                   <CountUp start={0} end={66}>
                     {({ countUpRef }) => (
@@ -311,9 +316,9 @@ export default function HomePage() {
             <p className="font-semibold text-red-500 ">OUR BENEFIT</p>
             <p className="font-bold text-3xl ">Why Choose Homeya</p>
           </div>
-          <div className="flex justify-between p-10">
+          <div className="flex flex-wrap justify-between p-10">
             <div className="text-center w-[400px]">
-              <p className="pl-32 m-5">
+              <p className="pl-32 m-5 max-sm:pl-24">
                 <span className=" text-8xl ">
                   <FaAward className=" cursor-pointer  " />
                 </span>
@@ -326,7 +331,7 @@ export default function HomePage() {
               </p>
             </div>
             <div className="text-center w-[400px]">
-              <p className="pl-32 m-5">
+              <p className="pl-32 m-5 max-sm:pl-24">
                 <span className=" text-8xl ">
                   <LiaPencilRulerSolid />
                 </span>
@@ -338,7 +343,7 @@ export default function HomePage() {
               </p>
             </div>
             <div className="text-center w-[400px]">
-              <p className="pl-32 m-5">
+              <p className="pl-32 m-5 max-sm:pl-24">
                 <span className=" text-8xl ">
                   <FaHandHoldingHand />
                 </span>
@@ -355,7 +360,7 @@ export default function HomePage() {
           </div>
         </div>
         {/* -------------------Top properties section------------------ */}
-        <div className="px-5 my-20 ">
+        <div className="px-5 my-20 max-sm:hidden ">
           <div className="text-left  ">
             <p className=" uppercase font-semibold text-red-500 py-2 ">
               top propertises
@@ -367,7 +372,7 @@ export default function HomePage() {
               </span>
             </p>
           </div>
-          <div className="flex justify-between mx-20 ">
+          <div className="flex flex-wrap max-sm:mx-4 justify-between mx-20 ">
             <div className="h-[500px] mt-10 my-4 hover:overflow-hidden shadow-lg  border-2 w-[500px] rounded-2xl">
               <div className=" hover:scale-105 ">
                 <img className="h-full w-[500px] rounded-t-2xl " src={house1} alt="" />
@@ -408,7 +413,7 @@ export default function HomePage() {
         </div>
         {/* --------------review section---------------------- */}
         <div className="bg-[#f0eee9] py-20">
-          <div className="flex justify-between">
+          <div className="flex flex-wrap justify-between">
             <div>
               <p className="text-red-500 font-semibold">TOP PROPERTISE</p>
               <h1 className="text-3xl font-bold py-4">
@@ -429,7 +434,7 @@ export default function HomePage() {
                 </button>
               </div>
             </div>
-            <div className="mx-24">
+            <div className=" mx-22 max-sm:mx-4">
               <ReviewCart />
             </div>
           </div>

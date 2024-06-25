@@ -12,7 +12,7 @@ export default function Footer() {
         </div>
       </div>
       {/* second section ---start---- */}
-      <div className="flex justify-between py-10 px-4">
+      <div className="flex flex-wrap justify-between py-10 px-4">
         <div>
             <p>Specializes in providing high-class tours for those <br/> in need. Contact Us</p>
             <p>101 E 129th St, East Chicago, IN 46312, US</p>
@@ -22,19 +22,19 @@ export default function Footer() {
         <div>
             <h1 className=" text-white font-bold">Categories</h1>
             <ul className="text-[#6f6f6f]">
-                <li><Link>Pricing Plans</Link></li>
-                <li><Link>Our Services</Link></li>
-                <li><Link>About Us</Link></li>
-                <li><Link>Contact Us</Link></li> 
+                <li><Link to="/pricing">Pricing Plans</Link></li>
+                <li><Link to="/our_services">Our Services</Link></li>
+                <li><Link to="/about_us">About Us</Link></li>
+                <li><Link to="/contact_us">Contact Us</Link></li> 
             </ul>
         </div>
         <div>
             <h1 className=" text-white font-bold">Our Company</h1>
             <ul className="text-[#6f6f6f]">
-                <li><Link>Property For Sale</Link></li>
-                <li><Link>Property For Rent</Link></li>
-                <li><Link>Property For Buy</Link></li>
-                <li><Link>Our Agents</Link></li> 
+                <li><Link to="/sale">Property For Sale</Link></li>
+                <li><Link to="/rent">Property For Rent</Link></li>
+                <li><Link to="/buy">Property For Buy</Link></li>
+                <li><Link to="/">Our Agents</Link></li> 
             </ul>
         </div>
         <div>
@@ -48,9 +48,9 @@ export default function Footer() {
       <div className="text-[#6f6f6f] flex mx-4 py-5 justify-between border-t-2">
         <p>©2024 Homzen. All Rights Reserved.</p>
         <ul className="flex gap-6">
-            <li><Link>Terms Of Services</Link></li>
-            <li><Link>Privacy Policy</Link></li>
-            <li><Link>Cookie Policy</Link></li>
+            <li><Link to="/privacy_policy">Terms Of Services</Link></li>
+            <li><Link to="/privacy_policy">Privacy Policy</Link></li>
+            <li><Link to="/privacy_policy">Cookie Policy</Link></li>
         </ul>
       </div>
     </div>

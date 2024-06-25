@@ -20,10 +20,10 @@ export default function Faqs() {
       {data.map((ques, index) => {
         return (
           <div className="my-4 cursor-pointer">
-            <div className=" flex justify-between rounded-xl text-xl font-bold border-2 w-1/2 ml-[25%] py-4 px-3">
+            <div className=" flex justify-between rounded-xl text-xl max-sm:w-[350px] max-sm:text-lg max-sm:py-2 max-sm:ml-10 font-bold border-2 w-1/2 ml-[25%] py-4 px-3">
               {ques.ques}
               <p
-                className="text-3xl items-center "
+                className="text-3xl items-center max-sm:text-lg "
                 onClick={() => {
                   setShow({
                     ...show,
@@ -36,7 +36,7 @@ export default function Faqs() {
             </div>
 
             {show[index] && (
-              <p className="justify-between text-xl text-[#6f6f6f] border-2 w-1/2 ml-[25%] py-4 px-3">
+              <p className="justify-between text-xl max-sm:text-sm max-sm:w-[350px] max-sm:ml-10 text-[#6f6f6f] border-2 w-1/2 ml-[25%] py-4 px-3">
                 {ques.ans}
               </p>
             )}
@@ -86,7 +86,7 @@ const questions = [
 
 function Partners(){
   return(
-    <div className="flex justify-between m-20">
+    <div className="flex max-sm:hidden justify-between m-20">
       {companyData.map((d) => (
         <img src={d.image} alt="" />
       ))}

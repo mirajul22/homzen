@@ -29,14 +29,14 @@ export default function AboutUs() {
         </div>
         {/* --------------section start---------------- */}
         <div className="my-20 mx-10">
-          <div className="flex justify-between items-center">
-            <h1 className="text-5xl font-bold ">Welcome To The Homzen</h1>
-            <p className="w-3/5 text-lg text-[#6f6f6f]">
+          <div className="flex flex-wrap max-sm:text-center justify-between items-center">
+            <h1 className="text-5xl w-[350px] font-bold ">Welcome To The Homzen</h1>
+            <p className="w-[750px] max-sm:w-full text-lg text-[#6f6f6f]">
               Welcome to Homeya, where we turn houses into homes and dreams into
               reality. At Homeya, we understand that a home is more than just a
               physical space; it's a place where memories are created, families
               grow, and life unfolds.
-              <Link className="flex my-4 font-bold items-center hover:underline gap-2">
+              <Link className="flex my-4 font-bold items-center hover:underline gap-2 max-sm:justify-center">
                 Learn More{" "}
                 <span className="text-red-500 hover:translate-x-2 ">
                   <FaArrowRight />
@@ -55,7 +55,7 @@ export default function AboutUs() {
           </div>
         </div>
         {/*  --------------why choose us ------------------ */}
-        <div className="flex justify-between items-center my-10 ">
+        <div className="flex flex-wrap justify-between items-center my-10 ">
           <div className="m-10 items-center w-[500px]">
             <p className="font-bold uppercase text-red-500 text-lg">
               why choose us
@@ -72,21 +72,21 @@ export default function AboutUs() {
             </p>
             <div className=" capitalize flex flex-wrap gap-4 my-5 font-bold text-lg ">
               <h2 className="flex items-center gap-2">
-                <IoCheckmarkCircleSharp /> Transparent Partnerships{" "}
+                <IoCheckmarkCircleSharp /> Transparent Partnerships
               </h2>
               <h2 className="flex items-center gap-2">
-                <IoCheckmarkCircleSharp /> proven expertise{" "}
+                <IoCheckmarkCircleSharp /> proven expertise
               </h2>
               <h2 className="flex items-center gap-2">
-                <IoCheckmarkCircleSharp /> customized solutions{" "}
+                <IoCheckmarkCircleSharp /> customized solutions
               </h2>
               <h2 className="flex items-center gap-2">
-                <IoCheckmarkCircleSharp /> local area knowledge{" "}
+                <IoCheckmarkCircleSharp /> local area knowledge
               </h2>
             </div>
-            <Link className="flex items-center underline  font-bold ">
+            <Link to="/contact_us" className="flex items-center underline  font-bold ">
               Contact Us
-              <IoIosArrowRoundForward className="text-red-500 hover:translate-x-4 text-xl" />{" "}
+              <IoIosArrowRoundForward className="text-red-500 hover:translate-x-4 text-xl" />
             </Link>
           </div>
           <p className="mr-20 ">
@@ -110,10 +110,10 @@ export default function AboutUs() {
         <h1 className="font-bold text-center text-3xl my-4 ">
           Meet Our Agents
         </h1>
-        <div className="flex text-center my-10">{Team}</div>
+        <div className="flex flex-wrap text-center my-10">{Team}</div>
         {/* -----------become partners---------- */}
         <div>
-          <div className=" flex items-center font-bold pl-20 bg-[#e1e1e1] my-20 mx-10 rounded-3xl ">
+          <div className=" flex flex-wrap items-center font-bold pl-20 bg-[#e1e1e1] my-20 mx-10 rounded-3xl ">
             <div>
               <p className="uppercase text-md text-red-500 py-4">
                 become partners
@@ -130,7 +130,7 @@ export default function AboutUs() {
             </div>
             <div>
               <img
-                className=" translate-x-24 -translate-y-5 scale-110"
+                className=" translate-x-24 -translate-y-5 scale-110 max-sm:-translate-x-4 max-sm:translate-y-0 "
                 src={banner}
                 alt=""
               />
