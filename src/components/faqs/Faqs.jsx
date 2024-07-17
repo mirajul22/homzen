@@ -20,7 +20,7 @@ export default function Faqs() {
       {data.map((ques, index) => {
         return (
           <div className="my-4 cursor-pointer">
-            <div className=" flex justify-between rounded-xl text-xl max-sm:w-[350px] max-sm:text-lg max-sm:py-2 max-sm:ml-10 font-bold border-2 w-1/2 ml-[25%] py-4 px-3">
+            <div className=" flex justify-between rounded-xl text-xl max-sm:w-full max-sm:text-lg max-sm:py-2 max-sm:mx-4 font-bold border-2 w-1/2 ml-[25%] py-4 px-3">
               {ques.ques}
               <p
                 className="text-3xl items-center max-sm:text-lg "
