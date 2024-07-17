@@ -7,7 +7,7 @@ export default function ReviewCart() {
   return (
     <div className=" flex flex-wrap gap-8 w-full  ">
       {cartData.map((data) => (
-        <div className="w-[400px] px-4 pt-10 h-[400px] rounded-2xl bg-white">
+        <div className="w-[400px] px-4 pt-10 h-[400px] max-sm:w-[350px] rounded-2xl bg-white">
           <span className="flex text-yellow-500 gap-2 text-2xl py-2">
             <FaStar />
             <FaStar />

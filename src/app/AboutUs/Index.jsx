@@ -24,7 +24,7 @@ export default function AboutUs() {
       </header>
 
       <main>
-        <div className="bg-[#f0eee9] font-bold text-5xl text-center py-32">
+        <div className="bg-[#f0eee9] font-bold text-5xl max-sm:text-3xl max-sm:h-20 text-center py-32">
           <h1>About Us </h1>
         </div>
         {/* --------------section start---------------- */}
@@ -44,7 +44,7 @@ export default function AboutUs() {
               </Link>
             </p>
           </div>
-          <div className="backimg my-10 h-[500px] rounded-3xl">
+          <div className="backimg my-10 max-sm:my-5 h-[500px] rounded-3xl">
             <div className=" mx-[48%] py-48">
               <Link className="text-8xl  ">
                 <span className="text-red-600 ">
@@ -110,7 +110,7 @@ export default function AboutUs() {
         <h1 className="font-bold text-center text-3xl my-4 ">
           Meet Our Agents
         </h1>
-        <div className="flex flex-wrap text-center my-10">{Team}</div>
+        <div className="flex flex-wrap text-center my-2 justify-between  max-sm:justify-center">{Team}</div>
         {/* -----------become partners---------- */}
         <div>
           <div className=" flex flex-wrap items-center font-bold pl-20 bg-[#e1e1e1] my-20 mx-10 rounded-3xl ">

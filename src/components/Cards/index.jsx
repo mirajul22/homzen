@@ -17,9 +17,9 @@ import "./style.css";
 
 export default function Cards() {
   return (
-    <div className="flex flex-wrap gap-10 ">
+    <div className="flex flex-wrap justify-between gap-10 ">
       {CardsData.map((data) => (
-        <div className=" block hover:overflow-hidden w-[400px] h-[500px] max-sm:w-[350px] max-sm:h-[450px]  border-2 rounded-3xl">
+        <div className=" block hover:overflow-hidden shadow-md w-[400px] h-[500px] max-sm:w-[350px]   border-2 rounded-3xl">
           <div className="h-[310px] overflow-hidden block ">
             <img
               className=" block hover:scale-125 hover:ease-linear hover:duration-300  rounded-t-3xl h-[310px] cursor-pointer"
@@ -28,7 +28,7 @@ export default function Cards() {
             />
           </div>
           <div className=" p-4">
-          <h1 className="font-bold text-base text-center border-2 bg-red-500 text-white"> {data.category} </h1>
+          <h1 className="font-bold text-base text-center border-2 bg-red-500 rounded-xl shadow-md text-white"> {data.category} </h1>
             <h1 className="font-bold text-base"> {data.title} </h1>
             <p className="flex gap-1 items-center">
               <IoLocationOutline /> {data.location}
@@ -56,7 +56,7 @@ export default function Cards() {
 
 function Cards2() {
   return (
-    <div className="backimg h-[500px] w-[400px] rounded-3xl">
+    <div className="backimg h-[500px] w-[400px] shadow-md rounded-3xl">
       <div className="text-left text-base font-semibold pt-[425px] pl-10 text-white">
         <p>221 Prpperty</p>
         <h1 className="text-2xl">Sydney, Australiya</h1>
@@ -173,7 +173,7 @@ const CardsData = [
 
 function CartOurServices() {
   return (
-    <div className="flex flex-wrap gap-8 m-10 ">
+    <div className="flex flex-wrap gap-8 m-10 max-sm:justify-center ">
       {services.map((d) => (
         <div className=" group text-center p-10 border-2 w-[400px] max-sm:w-[350px] rounded-3xl hover:bg-[#d1cfcf]">
           <p className="text-6xl px-20 py-5">

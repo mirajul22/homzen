@@ -21,7 +21,7 @@ export default function Footer() {
         </div>
         <div>
             <h1 className=" text-white font-bold">Categories</h1>
-            <ul className="text-[#6f6f6f]">
+            <ul className="text-gray-600">
                 <li><Link to="/pricing">Pricing Plans</Link></li>
                 <li><Link to="/our_services">Our Services</Link></li>
                 <li><Link to="/about_us">About Us</Link></li>
@@ -30,7 +30,7 @@ export default function Footer() {
         </div>
         <div>
             <h1 className=" text-white font-bold">Our Company</h1>
-            <ul className="text-[#6f6f6f]">
+            <ul className="text-gray-600">
                 <li><Link to="/sale">Property For Sale</Link></li>
                 <li><Link to="/rent">Property For Rent</Link></li>
                 <li><Link to="/buy">Property For Buy</Link></li>
@@ -39,13 +39,13 @@ export default function Footer() {
         </div>
         <div>
             <h1 className=" text-white font-bold">Newsletter</h1>
-            <p className="text-[#6f6f6f]">Your Weekly/Monthly Dose of Knowledge and Inspiration</p>
-            <p className="text-[#6f6f6f]">Your email address</p>
+            <p className="text-gray-600">Your Weekly/Monthly Dose of Knowledge and Inspiration</p>
+            <p className="text-gray-600">Your email address</p>
         </div>
       </div>
       {/* second section -----end---- */}
       {/* Third section -------start----------- */}
-      <div className="text-[#6f6f6f] flex mx-4 py-5 justify-between border-t-2">
+      <div className="text-gray-600 flex mx-4 py-5 justify-between border-t-2">
         <p>©2024 Homzen. All Rights Reserved.</p>
         <ul className="flex gap-6">
             <li><Link to="/privacy_policy">Terms Of Services</Link></li>

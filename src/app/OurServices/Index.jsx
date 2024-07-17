@@ -16,7 +16,7 @@ export default function OurServices() {
       </header>
 
       <main>
-        <div className="bg-[#f0eee9] font-bold text-5xl text-center py-32">
+        <div className="bg-[#f0eee9] font-bold text-5xl max-sm:text-3xl max-sm:h-20 text-center py-32">
           <h1>Our Services </h1>
         </div>
         {/* --------------our services---------------- */}
@@ -39,7 +39,7 @@ export default function OurServices() {
                 market navigation, offering informed decisions and optimal
                 results.
               </p>
-              <div className="flex ">
+              <div className="flex flex-wrap">
                 <button className="bg-red-500 text-white text-3xl p-3 m-3">
                   <IoIosArrowBack />
                 </button>
@@ -48,7 +48,7 @@ export default function OurServices() {
                 </button>
               </div>
             </div>
-            <div className="mx-22 max-sm:mx-9 max-sm:w-[350px]">
+            <div className="mx-22 max-sm:justify-center max-sm:mx-6">
               <ReviewCart />
             </div>
           </div>

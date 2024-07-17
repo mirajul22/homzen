@@ -129,7 +129,7 @@ export default function HomePage() {
          }
          
         </div>
-        <div className="flex flex-wrap gap-8 p-8">
+        <div className="flex flex-wrap  p-8">
           <Cards />
         </div>
         <div className="text-center mb-20">
@@ -141,7 +141,7 @@ export default function HomePage() {
         <div className=" text-center mb-10 pt-20 pb-10 bg-[#f0eee9]  ">
           <p className=" text-red-500 font-semibold  ">EXPLORE CITIES</p>
           <h1 className="font-bold text-3xl">Our Location For You</h1>
-          <div className="flex flex-wrap gap-8 m-10">
+          <div className="flex flex-wrap gap-8  justify-between m-10">
             <Cards2 />
             <Cards2 />
             <Cards2 />

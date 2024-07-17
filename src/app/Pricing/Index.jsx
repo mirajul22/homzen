@@ -4,9 +4,6 @@ import Footer from "../../components/Footer/Index";
 import { CartSubscription, CartSubscription2 } from "../../components/Cards";
 import Faqs from "../../components/faqs/Faqs";
 
-
-
-
 export default function Pricing() {
 
   return (
@@ -16,7 +13,7 @@ export default function Pricing() {
       </header>
 
       <main>
-      <div className="bg-[#f0eee9] font-bold text-5xl text-center py-32 max-sm:h-10 max-sm:text-3xl">
+      <div className="bg-[#f0eee9] font-bold text-5xl text-center py-32 max-sm:h-20 max-sm:text-3xl">
           <h1>Our Pricing </h1>
         </div>
         <div>
@@ -25,7 +22,7 @@ export default function Pricing() {
           <p className="text-red-500 font-bold text-md">PRICING</p>
           <h1 className="text-3xl my-4 font-bold ">Our Subscriptions</h1>
         </div>
-        <div className="flex flex-wrap justify-between my-20 mx-8 max-sm:justify-center max-sm:mx-10">
+        <div className="flex flex-wrap justify-between gap-4 my-20 mx-8 max-sm:justify-center max-sm:mx-10">
           <CartSubscription/>
           <CartSubscription/>
           <CartSubscription2/>
@@ -35,7 +32,7 @@ export default function Pricing() {
           <div className="text-center font-bold pt-10 max-sm:pt-0 ">
           <h3 className=" text-red-500 ">FAQS</h3>
           <h1 className="text-3xl max-sm:text-xl">Quick Answers To Questions</h1>
-          <div className="mb-20 max-sm:-mb-10">
+          <div className="mb-20 ">
             <Faqs />
           </div>
         </div>
