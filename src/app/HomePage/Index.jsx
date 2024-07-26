@@ -29,8 +29,6 @@ export default function HomePage() {
   const [counter, setCounter] = useState(false);
   const [showButton] = useState(true);
 
- 
-
   //------------------------  our team section -------------------------
 
   const Team = teamData.map((d) => (
@@ -39,11 +37,11 @@ export default function HomePage() {
   return (
     <div>
       <header>
-          <Header />
+        <Header />
       </header>
       <hero>
-        <div className="heroimg">
-          <div className=" text-center pt-[200px] px-10 text-white ">
+        <div className="heroimg ">
+          <div className=" text-center pt-[300px] px-10 text-white ">
             <div className="h-[174px] font-bold text-7xl max-sm:text-4xl max-sm:h-[100px] max-sm:flex-col flex gap-2 justify-center">
               <h1>Find Your</h1>
               <section class="animation">
@@ -59,58 +57,67 @@ export default function HomePage() {
               </section>
             </div>
             <div>
-              <p>
+              <p className="text-xl font-semibold">
                 We are a real estate agency that will help you find the best
                 residence you <br /> dream of, let’s discuss for your dream
                 house?
               </p>
             </div>
-            <div className="font-bold mt-10 ">
+            <div className="font-bold mt-12 ">
               <button
-                className="p-4 rounded-md mr-1 bg-white text-black bg-[hsla(0,0%,100%,.1)] "
+                className="p-5 text-lg rounded-md mr-1 bg-white text-black bg-[hsla(0,0%,100%,.1)] "
                 type="text"
               >
                 FOR RENT
               </button>
               <button
-                className="p-4 rounded-md bg-hsla(0,0%,100%,.1) hover:bg-white hover:text-black "
+                className="p-5 text-lg rounded-md bg-hsla(0,0%,100%,.1) hover:bg-white hover:text-black "
                 type="text"
               >
                 FOR SALE
               </button>
             </div>
             {/* find propertise section  -----start---------- */}
-            <div className="flex max-sm:flex-col max-sm:h-52 font-semibold w-full rounded-lg bg-white justify-between text-black m-[-4px] h-20 p-4 text-left">
-              <div>
-                <h1>Keyword</h1>
-                <input type="text" placeholder="Search Keyword." />
-              </div>
-              <div>
-                <h1>Location</h1>
-                <input type="text" placeholder="Search Location" />
-              </div>
-              <div>
-                <h1>Type</h1>
-                <select>
-                  <option value="true">All</option>
-                  <option value="villa">Villa</option>
-                  <option value="studio">Studio</option>
-                  <option value="office">Office</option>
-                  <option value="house">House</option>
-                </select>
-              </div>
-              <div>
-                <Link>
-                  <span>
+            <form className="flex flex-wrap max-sm:flex-col max-sm:h-52 font-semibold w-[90%] rounded-lg bg-white justify-between mx-[5%] text-black m-[-4px] h-24  text-left">
+              <div className="flex flex-1 gap-4 w-full py-4 items-center ">
+                <div className="border-r-2  w-[29%] px-2">
+                  <h1>Keyword</h1>
+                  <input
+                    type="text"
+                    placeholder="Search Keyword."
+                    required
+                    className=" focus:outline-none"
+                  />
+                </div>
+                <div className="border-r-2  w-[29%] px-2">
+                  <h1>Location</h1>
+                  <input
+                    type="text"
+                    placeholder="Search Location"
+                    className=" focus:outline-none"
+                  />
+                </div>
+                <div className="border-r-2   w-[29%] px-2">
+                  <h1>Type</h1>
+                  <select className="w-full focus:outline-none rounded-md">
+                    <option value="true">All</option>
+                    <option value="villa">Villa</option>
+                    <option value="studio">Studio</option>
+                    <option value="office">Office</option>
+                    <option value="house">House</option>
+                  </select>
+                </div>
+                <div className="flex-1 text-center">
+                  <div className="text-2xl px-8">
                     <PiFaders />
-                  </span>
-                  <span>Advanced</span>
-                </Link>
+                  </div>
+                    Advanced
+                </div>
               </div>
-              <div className=" max-sm:my-4 max-sm:text-center max-sm:rounded-lg  p-3 font-bold text-white bg-red-500 hover:bg-red-700 ">
+              <div className=" max-sm:my-4 max-sm:text-center max-sm:rounded-lg py-8 rounded-r-lg px-5 font-bold text-white bg-red-500 hover:bg-red-700 ">
                 <button>Find Propertise</button>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </hero>
@@ -121,13 +128,7 @@ export default function HomePage() {
           <h1 className="text-3xl ">Recommended For You</h1>
         </div>
         <div className="flex max-sm:ml-[150px] max-sm:flex-col justify-center gap-4 mb-5 ">
-          {showButton ? (
-            <Button2 />
-          ) : (
-            <Buttons />
-          )
-         }
-         
+          {showButton ? <Button2 /> : <Buttons />}
         </div>
         <div className="flex flex-wrap  p-8">
           <Cards />
@@ -183,7 +184,6 @@ export default function HomePage() {
             </div>
             <div>
               <p className="text-6xl px-20 py-5 max-sm:px-36">
-          
                 <span>
                   <FcHome />
                 </span>
@@ -375,7 +375,11 @@ export default function HomePage() {
           <div className="flex flex-wrap max-sm:mx-4 justify-between mx-20 ">
             <div className="h-[500px] mt-10 my-4 hover:overflow-hidden shadow-lg  border-2 w-[500px] rounded-2xl">
               <div className=" hover:scale-105 ">
-                <img className="h-full w-[500px] rounded-t-2xl " src={house1} alt="" />
+                <img
+                  className="h-full w-[500px] rounded-t-2xl "
+                  src={house1}
+                  alt=""
+                />
               </div>
               <h1 className="font-bold text-xl px-4 py-2">
                 rancho vista verde, santa barbara

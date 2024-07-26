@@ -3,16 +3,38 @@ import logo from "../../images/logo@2x.png";
 import { Link } from "react-router-dom";
 import { IoReorderThreeOutline } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
+import LoginPage from "../Login";
+import Signup from "../Signup";
 
 export default function Header() {
   const [navOpen, setNavOpen] = useState(false);
+  const [login, setlogin] = useState(false);
+  const [signup, setSignup] = useState(false);
+
+  const handleSignup = () => {
+    setSignup(true);
+  };
+
+  const handleLogin = () => {
+    setlogin(true);
+  };
+
+  const handleClose = () => {
+    if (handleLogin) {
+      setlogin(false);
+    } 
+
+    if(handleSignup){
+      setSignup(false);
+    }
+  };
 
   const handleNav = () => {
     setNavOpen(!navOpen);
   };
 
   return (
-    <div className="flex max-sm:flex-col  justify-between p-4 bg-white w-full fixed z-10">
+    <div className="flex max-sm:flex-col  justify-between py-4 px-10 bg-white w-full fixed z-10">
       <div className="flex justify-between items-center">
         <img
           className="w-[174px] h-[43px] max-sm:w-28 max-sm:h-8 max-sm:items-center"
@@ -34,7 +56,7 @@ export default function Header() {
         </div>
       </div>
       {navOpen ? (
-        <ul className="flex max-sm:flex-col max-sm:my-4 gap-6 items-center font-bold">
+        <ul className="flex max-sm:flex-col max-sm:my-4 gap-10 items-center font-bold">
           <li className="hover:text-red-500">
             <Link to="/">Home</Link>
           </li>
@@ -59,7 +81,7 @@ export default function Header() {
       )}
       {navOpen && (
         <div className="font-bold max-sm:text-center">
-          <Link to="/login">Login</Link>/<Link to="/sign_up">Register</Link>
+          <button>Login</button>/<button>Register</button>
           <button
             type="Submit"
             className="bg-red-500 hover:bg-red-700 text-white pl-3 pr-3 pt-2 pb-2 ml-3"
@@ -68,7 +90,7 @@ export default function Header() {
           </button>
         </div>
       )}
-      
+
       <ul className="flex max-sm:hidden gap-6 items-center font-bold">
         <li className="hover:text-red-500">
           <Link to="/">Home</Link>
@@ -90,15 +112,23 @@ export default function Header() {
         </li>
       </ul>
 
-      <div className="font-bold max-sm:hidden">
-          <Link to="/login">Login</Link>/<Link to="/sign_up">Register</Link>
-          <button
-            type="Submit"
-            className="bg-red-500 hover:bg-red-700 text-white pl-3 pr-3 pt-2 pb-2 ml-3"
-          >
-            Submit Property
+      <div className=" flex items-center font-bold max-sm:hidden cursor-pointer">
+        <div className="flex">
+          <button id="show-login" onClick={handleLogin}>
+            Login
           </button>
+          /<button onClick={handleSignup}>Register</button>
         </div>
+        {login ? <LoginPage handleClose={handleClose} /> : ""}
+        {signup ? <Signup handleClose={handleClose} /> : ""}
+
+        <button
+          type="Submit"
+          className="bg-red-500 hover:bg-red-700 text-white pl-3 pr-3 pt-2 pb-2 ml-3"
+        >
+          Submit Property
+        </button>
+      </div>
     </div>
   );
 }

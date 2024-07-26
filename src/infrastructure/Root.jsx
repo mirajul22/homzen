@@ -7,8 +7,8 @@ import ContactUs from "../app/ContactUs/Index";
 import OurServices from "../app/OurServices/Index";
 import Pricing from "../app/Pricing/Index";
 import PrivacyPolicy from "../app/PrivacyPolicy/Index";
-import LoginPage from "../app/login";
-import SignUpPage from "../app/signup";
+import LoginPage from "../components/Login";
+import Signup from "../components/Signup";
 
 function Root() {
   return (
@@ -20,7 +20,7 @@ function Root() {
       <Route path="/privacy_policy" element={<PrivacyPolicy />} />
       <Route path="/pricing" element={<Pricing />} />
       <Route path="/login" element={<LoginPage />} />
-      <Route path="/sign_up" element={<SignUpPage />} />
+      <Route path="/sign-up" element={<Signup />} />
     </Routes>
   );
 }
