@@ -9,6 +9,7 @@ import house3 from "../../images/house-3.jpg";
 import house5 from "../../images/house-5.jpg";
 import house6 from "../../images/house-6.jpg";
 import house7 from "../../images/house-7.jpg";
+import user from "../../images/agent-1.jpg";
 import { FcHome } from "react-icons/fc";
 import { PiBathtubThin } from "react-icons/pi";
 import { PiBedLight } from "react-icons/pi";
@@ -17,19 +18,33 @@ import "./style.css";
 
 export default function Cards() {
   return (
-    <div className="flex flex-wrap justify-between gap-10 ">
+    <div className="flex flex-wrap justify-center gap-10 ">
       {CardsData.map((data) => (
-        <div className=" block hover:overflow-hidden shadow-md w-[400px] h-[500px] max-sm:w-[350px]   border-2 rounded-3xl">
-          <div className="h-[310px] overflow-hidden block ">
+        <div className=" block hover:overflow-hidden shadow-xl w-[400px] pb-4 max-sm:w-[350px]   border-2 rounded-xl">
+          <div className="flex uppercase absolute z-10 items-center cursor-pointer ">
+            <h1 className="font-bold text-white text-sm bg-green-500 m-3 px-2 rounded-md ">
+              Featured
+            </h1>
+            <h1 className="font-semibold text-sm bg-white hover:bg-red-500 px-2 rounded-md  ">
+              For Sale
+            </h1>
+          </div>
+          <div className="flex uppercase absolute z-10 items-center cursor-pointer pt-[250px] pl-2 ">
+            <h1 className="font-semibold text-sm bg-white hover:bg-red-500 px-2 rounded-md  ">
+              {data.category}
+            </h1>
+          </div>
+
+          <div className="h-[280px] overflow-hidden block ">
             <img
-              className=" block hover:scale-125 hover:ease-linear hover:duration-300  rounded-t-3xl h-[310px] cursor-pointer"
+              className=" block hover:scale-110 hover:ease-linear hover:duration-300  rounded-t-xl h-[280px] cursor-pointer"
               src={data.image}
               alt=""
             />
           </div>
           <div className=" p-4">
-          <h1 className="font-bold text-base text-center border-2 bg-red-500 rounded-xl shadow-md text-white"> {data.category} </h1>
-            <h1 className="font-bold text-base"> {data.title} </h1>
+            {/* <h1 className=" absolute   font-bold text-base text-center border-2 bg-red-500 rounded-xl shadow-md text-white"> {data.category} </h1> */}
+            <h1 className="font-bold text-lg"> {data.title} </h1>
             <p className="flex gap-1 items-center">
               <IoLocationOutline /> {data.location}
             </p>
@@ -47,6 +62,19 @@ export default function Cards() {
                 <span className=" text-base font-bold">{data.SqFT} sqFT</span>
               </li>
             </ul>
+          </div>
+          <hr />
+          <div className="flex items-center py-2 px-4 justify-between">
+            <div className="flex items-center gap-2">
+              <div className="w-10 h-10 bg-gray-200 rounded-full overflow-hidden">
+                <img src={user} alt="" />
+              </div>
+              <h1 className="font-semibold text-gray-500">Ralph Edward</h1>
+            </div>
+            <div className="flex font-bold items-center ">
+              <p className="font-extrabold text-xl">$7250,00</p>
+              <p className="text-gray-500">/SqFT</p>
+            </div>
           </div>
         </div>
       ))}
@@ -67,18 +95,18 @@ function Cards2() {
 
 function Cards3() {
   return (
-    <div className="rounded-xl flex border-2 shadow-lg overflow-hidden w-[600px] h-[235px]">
-      <div className="backimg w-[250px] h-[235px] font-bold p-2">
-        <p className="bg-green-500 w-24 px-2 py-2 text-white">FEATURED</p>
-        <p className="bg-gray-300 text-white w-24 py-2 px-2 mt-1">FOR SALE</p>
-        <p className="bg-white w-20 mt-24  px-4 py-1 rounded-md"> House</p>
+    <div className="rounded-xl flex border-2 shadow-lg overflow-hidden w-[600px] mb-5 hover:scale-105 duration-500">
+      <div className="backimg w-[250px] h-[200px] font-bold text-base p-2">
+        <p className="bg-green-500 w-24 px-2 rounded-md text-white">FEATURED</p>
+        <p className=" bg-white w-24 rounded-md text-center  mt-1">FOR SALE</p>
+        <p className="bg-white w-20 mt-36  px-4 rounded-md"> House</p>
       </div>
-      <div className=" p-6">
+      <div className=" p-3">
         <h1 className="font-bold text-lg pb-2">Case Lomas De Machali Machas</h1>
         <p className="flex gap-2 pb-2 items-center">
           <IoLocationOutline /> 33 Maple Street, San Francisco, California
         </p>
-        <ul className="flex justify-between mr-8 mt-2 text-2xl border-b-2 pb-4 ">
+        <ul className="flex justify-between mr-8 mt-2 text-2xl pb-4 ">
           <li className="flex gap-4">
             <PiBedLight />
             <span className=" text-base font-bold">3</span>
@@ -92,8 +120,14 @@ function Cards3() {
             <span className=" text-base font-bold">600 sqFT</span>
           </li>
         </ul>
-        <div className="flex justify-between mt-6">
-          <p>Ralph Edward</p>
+        <hr />
+        <div className="flex justify-between py-2 items-center">
+          <div className="flex items-center gap-2">
+            <div className="w-10 h-10 rounded-full overflow-hidden">
+              <img src={user} alt="" />
+            </div>
+            <p>Ralph Edward</p>
+          </div>
           <div className="flex">
             <p className="font-bold">$5050.00 </p>
             <span>/SqFT</span>
@@ -115,7 +149,7 @@ const CardsData = [
     bed: 2,
     bath: 2,
     SqFT: 600,
-    category: "studio"
+    category: "studio",
   },
   {
     id: 2,
@@ -125,7 +159,7 @@ const CardsData = [
     bed: 4,
     bath: 2,
     SqFT: 600,
-    category: "apartment"
+    category: "apartment",
   },
   {
     id: 3,
@@ -135,7 +169,7 @@ const CardsData = [
     bed: 3,
     bath: 2,
     SqFT: 600,
-    category: "villa"
+    category: "villa",
   },
   {
     id: 4,
@@ -145,7 +179,7 @@ const CardsData = [
     bed: 4,
     bath: 2,
     SqFT: 600,
-    category: "house"
+    category: "house",
   },
   {
     id: 5,
@@ -155,7 +189,7 @@ const CardsData = [
     bed: 2,
     bath: 2,
     SqFT: 600,
-    category: "office"
+    category: "office",
   },
   {
     id: 6,
@@ -165,7 +199,7 @@ const CardsData = [
     bed: 3,
     bath: 2,
     SqFT: 600,
-    category: "studio"
+    category: "studio",
   },
 ];
 
@@ -232,9 +266,13 @@ function CartChoose() {
             </span>
           </p>
           <div>
-            <h1 className="text-2xl font-bold p-2 max-sm:text-xl max-sm:p-0">{d.title}</h1>
+            <h1 className="text-2xl font-bold p-2 max-sm:text-xl max-sm:p-0">
+              {d.title}
+            </h1>
             <p className="p-2 max-sm:p-0">{d.description}</p>
-            <Link className="flex items-center gap-2 font-bold underline">Learn More <IoIosArrowRoundForward  className="text-red-500 hover:translate-x-2"/>
+            <Link className="flex items-center gap-2 font-bold underline">
+              Learn More{" "}
+              <IoIosArrowRoundForward className="text-red-500 hover:translate-x-2" />
             </Link>
           </div>
         </div>
@@ -270,51 +308,90 @@ const services2 = [
 
 // --------------subscription carts------------------
 
-function CartSubscription(){
-  return(
-    <div className="group bg-gray-100 w-[300px] h-[480px] hover:duration-300 p-4 rounded-3xl hover:text-white hover:bg-red-500 " >
-        <div className="flex">
-          <p className="font-bold text-3xl ">$20</p>
-          <p className="pt-4">/month</p>
-        </div>
-        <p className="font-bold text-2xl py-4">Intro</p>
-        <p className="font-semibold pb-2">Join us every month for a very reasonable price</p>
-        <p className=" flex items-center gap-2 font-bold py-2"><FaCheckCircle className=" text-red-500 group-hover:text-white" /> Transportation for you</p>
-        <p className=" flex items-center gap-2 font-bold py-2"><FaCheckCircle className=" text-red-500 group-hover:text-white" /> A hotel or homestay</p>
-        <p className=" flex items-center gap-2 font-bold py-2"><FaCheckCircle className=" text-red-500 group-hover:text-white" /> Free meals and drinks</p>
-        <p className=" flex items-center gap-2 font-bold py-2"><FaCheckCircle className=" text-red-500 group-hover:text-white" /> 24/7 Support</p>
-        <p className=" flex items-center gap-2 font-bold py-2"><FaCheckCircle className=" text-red-500 group-hover:text-white" /> Ultimate users</p>
-        <div>
-          <button className="font-bold border-2 group-hover:border-none  py-2 px-10 my-4 border-black bg-white text-black " type="button">Choose The Package</button>
-        </div>
+function CartSubscription() {
+  return (
+    <div className="group bg-gray-100 w-[300px] h-[480px] hover:duration-300 p-4 rounded-3xl hover:text-white hover:bg-red-500 ">
+      <div className="flex">
+        <p className="font-bold text-3xl ">$20</p>
+        <p className="pt-4">/month</p>
+      </div>
+      <p className="font-bold text-2xl py-4">Intro</p>
+      <p className="font-semibold pb-2">
+        Join us every month for a very reasonable price
+      </p>
+      <p className=" flex items-center gap-2 font-bold py-2">
+        <FaCheckCircle className=" text-red-500 group-hover:text-white" />{" "}
+        Transportation for you
+      </p>
+      <p className=" flex items-center gap-2 font-bold py-2">
+        <FaCheckCircle className=" text-red-500 group-hover:text-white" /> A
+        hotel or homestay
+      </p>
+      <p className=" flex items-center gap-2 font-bold py-2">
+        <FaCheckCircle className=" text-red-500 group-hover:text-white" /> Free
+        meals and drinks
+      </p>
+      <p className=" flex items-center gap-2 font-bold py-2">
+        <FaCheckCircle className=" text-red-500 group-hover:text-white" /> 24/7
+        Support
+      </p>
+      <p className=" flex items-center gap-2 font-bold py-2">
+        <FaCheckCircle className=" text-red-500 group-hover:text-white" />{" "}
+        Ultimate users
+      </p>
+      <div>
+        <button
+          className="font-bold border-2 group-hover:border-none  py-2 px-10 my-4 border-black bg-white text-black "
+          type="button"
+        >
+          Choose The Package
+        </button>
+      </div>
     </div>
-  )
+  );
 }
 
-export {CartSubscription}
+export { CartSubscription };
 
-function CartSubscription2(){
-  return(
-    <div className="w-[300px] p-4 rounded-3xl text-white bg-red-500 " >
-        <div className="font-bold text-black bg-white w-40 ml-[100px] my-1 rounded-xl px-4 py-2 ">
-          <h1>MOST POPULAR</h1>
-        </div>
-        <div className="flex">
-          <p className="font-bold text-3xl ">$20</p>
-          <p className="pt-4">/month</p>
-        </div>
-        <p className="font-bold text-2xl py-4">Intro</p>
-        <p className="font-semibold pb-2">Join us every month for a very reasonable price</p>
-        <p className=" flex items-center gap-2 font-bold py-2"><FaCheckCircle className=" text-gray-100" /> Transportation for you</p>
-        <p className=" flex items-center gap-2 font-bold py-2"><FaCheckCircle className=" text-gray-100" /> A hotel or homestay</p>
-        <p className=" flex items-center gap-2 font-bold py-2"><FaCheckCircle className=" text-gray-100" /> Free meals and drinks</p>
-        <p className=" flex items-center gap-2 font-bold py-2"><FaCheckCircle className=" text-gray-100" /> 24/7 Support</p>
-        <p className=" flex items-center gap-2 font-bold py-2"><FaCheckCircle className=" text-gray-100" /> Ultimate users</p>
-        <div>
-          <button className="font-bold text-black border-2 border-none  py-2 px-8 m-4  bg-white " type="button">Choose The Package</button>
-        </div>
+function CartSubscription2() {
+  return (
+    <div className="w-[300px] p-4 rounded-3xl text-white bg-red-500 ">
+      <div className="font-bold text-black bg-white w-40 ml-[100px] my-1 rounded-xl px-4 py-2 ">
+        <h1>MOST POPULAR</h1>
+      </div>
+      <div className="flex">
+        <p className="font-bold text-3xl ">$20</p>
+        <p className="pt-4">/month</p>
+      </div>
+      <p className="font-bold text-2xl py-4">Intro</p>
+      <p className="font-semibold pb-2">
+        Join us every month for a very reasonable price
+      </p>
+      <p className=" flex items-center gap-2 font-bold py-2">
+        <FaCheckCircle className=" text-gray-100" /> Transportation for you
+      </p>
+      <p className=" flex items-center gap-2 font-bold py-2">
+        <FaCheckCircle className=" text-gray-100" /> A hotel or homestay
+      </p>
+      <p className=" flex items-center gap-2 font-bold py-2">
+        <FaCheckCircle className=" text-gray-100" /> Free meals and drinks
+      </p>
+      <p className=" flex items-center gap-2 font-bold py-2">
+        <FaCheckCircle className=" text-gray-100" /> 24/7 Support
+      </p>
+      <p className=" flex items-center gap-2 font-bold py-2">
+        <FaCheckCircle className=" text-gray-100" /> Ultimate users
+      </p>
+      <div>
+        <button
+          className="font-bold text-black border-2 border-none  py-2 px-8 m-4  bg-white "
+          type="button"
+        >
+          Choose The Package
+        </button>
+      </div>
     </div>
-  )
+  );
 }
 
-export {CartSubscription2}
+export { CartSubscription2 };

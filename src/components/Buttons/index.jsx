@@ -16,10 +16,26 @@ export default function Buttons() {
 }
 
 function Button2() {
+  
   return (
-    <div>
-      <div className="bg-red-500 text-white font-semibold p-2 w-28 text-center  ">
+    <div className="flex gap-2">
+      <div className="bg-red-500 text-white font-semibold p-2 w-28 text-center  rounded-md cursor-pointer ">
         View All
+      </div>
+      <div className=" bg-gray-200 font-semibold p-2 w-28 text-center  rounded-md cursor-pointer  ">
+        Apartement 
+      </div>
+      <div className=" bg-gray-200 font-semibold p-2 w-28 text-center  rounded-md cursor-pointer  ">
+        Villa
+      </div>
+      <div className=" bg-gray-200 font-semibold p-2 w-28 text-center  rounded-md cursor-pointer  ">
+        Studio
+      </div>
+      <div className=" bg-gray-200 font-semibold p-2 w-28 text-center  rounded-md cursor-pointer  ">
+        House
+      </div>
+      <div className=" bg-gray-200 font-semibold p-2 w-28 text-center rounded-md cursor-pointer   ">
+        Office
       </div>
     </div>
   );

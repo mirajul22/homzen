@@ -3,7 +3,7 @@ import logo from "../../images/logo@2x.png";
 import { Link } from "react-router-dom";
 import { IoReorderThreeOutline } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
-import LoginPage from "../Login";
+import Login from "../Login";
 import Signup from "../Signup";
 
 export default function Header() {
@@ -34,7 +34,7 @@ export default function Header() {
   };
 
   return (
-    <div className="flex max-sm:flex-col  justify-between py-4 px-10 bg-white w-full fixed z-10">
+    <div className="flex max-sm:flex-col  justify-between py-4 px-10 bg-white w-full fixed z-50">
       <div className="flex justify-between items-center">
         <img
           className="w-[174px] h-[43px] max-sm:w-28 max-sm:h-8 max-sm:items-center"
@@ -119,7 +119,7 @@ export default function Header() {
           </button>
           /<button onClick={handleSignup}>Register</button>
         </div>
-        {login ? <LoginPage handleClose={handleClose} /> : ""}
+        {login ? <Login handleClose={handleClose} /> : ""}
         {signup ? <Signup handleClose={handleClose} /> : ""}
 
         <button

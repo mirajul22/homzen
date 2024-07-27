@@ -32,17 +32,17 @@ export const teamData = [
 export const responsive = {
   desktop: {
     breakpoint: { max: 2400, min: 800 },
-    items: 3,
+    items: 4,
     slidesToSlide: 3, // optional, default to 1.
   },
   tablet: {
     breakpoint: { max: 800, min: 464 },
-    items: 2,
+    items: 3,
     slidesToSlide: 2, // optional, default to 1.
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
-    items: 1,
+    items: 2,
     slidesToSlide: 1, // optional, default to 1.
   },
 };

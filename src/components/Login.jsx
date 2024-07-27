@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function LoginPage({ handleClose }) {
+export default function Login({ handleClose }) {
   return (
     <div>
       <div className="absolute right-[35%] active:right-[35%] top-[50%]  rounded-xl bg-[#f1f1f1] border-2 w-[500px]  p-8">
@@ -46,7 +46,7 @@ export default function LoginPage({ handleClose }) {
             <h1 className="py-3 border-2 bg-white rounded-xl hover:bg-red-500 hover:text-white duration-500 mb-2 ">Continue with Google</h1>
           </div>
           <button
-            className="text-xl rounded-lg text-white bg-red-500 w-[98%] ml-1 font-bold py-2"
+            className="text-xl rounded-lg text-white bg-red-500 w-full font-bold py-2"
             type="submit"
           >
             Login

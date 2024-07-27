@@ -15,19 +15,30 @@ import Footer from "../../components/Footer/Index";
 import { Link } from "react-router-dom";
 import "./index.css";
 import Buttons, { Button2 } from "../../components/Buttons";
-import Cards, { Cards2, Cards3 } from "../../components/Cards";
+import Cards, {  Cards3 } from "../../components/Cards";
 import house1 from "../../images/house-1.jpg";
 import ReviewCart from "../../components/reviewCart/ReviewCart";
 import CountUp from "react-countup";
 import ScrollTrigger from "react-scroll-trigger";
-import Carousel from "react-multi-carousel";
+// import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import TeamCart from "../../components/teamCart/TeamCart";
-import { responsive, teamData } from "../../components/teamCart/teamData";
+import { teamData } from "../../components/teamCart/teamData";
+import { IoLocationOutline } from "react-icons/io5";
+import user from "../../images/agent-1.jpg";
 
 export default function HomePage() {
   const [counter, setCounter] = useState(false);
   const [showButton] = useState(true);
+  const [btn, setBtn] = useState(false);
+
+  const handlebtn = () => {
+    setBtn(true);
+  };
+
+  const handlebtn2 = () => {
+    setBtn(false);
+  };
 
   //------------------------  our team section -------------------------
 
@@ -65,13 +76,23 @@ export default function HomePage() {
             </div>
             <div className="font-bold mt-12 ">
               <button
-                className="p-5 text-lg rounded-md mr-1 bg-white text-black bg-[hsla(0,0%,100%,.1)] "
+                onClick={handlebtn}
+                className={
+                  btn
+                    ? "p-5 text-lg rounded-md mr-1 bg-white text-black bg-[hsla(0,0%,100%,.1)] "
+                    : ""
+                }
                 type="text"
               >
                 FOR RENT
               </button>
               <button
-                className="p-5 text-lg rounded-md bg-hsla(0,0%,100%,.1) hover:bg-white hover:text-black "
+                onClick={handlebtn2}
+                className={
+                  !btn
+                    ? "p-5 text-lg rounded-md bg-hsla(0,0%,100%,.1) hover:bg-white hover:text-black "
+                    : ""
+                }
                 type="text"
               >
                 FOR SALE
@@ -97,7 +118,7 @@ export default function HomePage() {
                     className=" focus:outline-none"
                   />
                 </div>
-                <div className="border-r-2   w-[29%] px-2">
+                <div className="border-r-2  w-[29%] px-2">
                   <h1>Type</h1>
                   <select className="w-full focus:outline-none rounded-md">
                     <option value="true">All</option>
@@ -111,7 +132,7 @@ export default function HomePage() {
                   <div className="text-2xl px-8">
                     <PiFaders />
                   </div>
-                    Advanced
+                  Advanced
                 </div>
               </div>
               <div className=" max-sm:my-4 max-sm:text-center max-sm:rounded-lg py-8 rounded-r-lg px-5 font-bold text-white bg-red-500 hover:bg-red-700 ">
@@ -134,12 +155,12 @@ export default function HomePage() {
           <Cards />
         </div>
         <div className="text-center mb-20">
-          <button className="bg-red-500 text-white font-bold p-4 w-[200px] hover:bg-red-700 ">
+          <button className="bg-red-500 text-white font-bold p-4 w-[200px] hover:bg-red-700 rounded-lg ">
             View All Properties
           </button>
         </div>
         {/* --------------location section ------------------ */}
-        <div className=" text-center mb-10 pt-20 pb-10 bg-[#f0eee9]  ">
+        {/* <div className=" text-center mb-10 pt-20 pb-10 bg-[#F7F7F7]  ">
           <p className=" text-red-500 font-semibold  ">EXPLORE CITIES</p>
           <h1 className="font-bold text-3xl">Our Location For You</h1>
           <div className="flex flex-wrap gap-8  justify-between m-10">
@@ -147,22 +168,24 @@ export default function HomePage() {
             <Cards2 />
             <Cards2 />
           </div>
-        </div>
+        </div> */}
         {/* ---------our services------- */}
-        <div className="pl-4 pr-4">
-          <div className="text-red-500 font-semibold p-4 pb-0">
-            OUR SERVICES
-          </div>
-          <div className="flex justify-between items-center p-4 pt-2">
-            <h1 className="text-3xl font-bold">What We Do?</h1>
+        <div className="">
+          {/* <div className="justify-center bg-red-300"> */}
+          <div className="flex justify-center items-center p-4 gap-[900px]  pt-2">
+            <div>
+              <h1 className="text-red-500  font-semibold ">OUR SERVICES</h1>
+              <h1 className="text-3xl font-bold">What We Do?</h1>
+            </div>
             <Link className="flex items-center gap-2 underline font-semibold  ">
-              View All Services{" "}
+              View All Services
               <span className="text-red-500">
                 <FaArrowRight />
-              </span>{" "}
+              </span>
             </Link>
           </div>
-          <div className="flex flex-wrap max-sm:text-center justify-between mb-10">
+          {/* </div> */}
+          <div className="flex flex-wrap max-sm:text-center gap-20  justify-center mb-10">
             <div>
               <p className="text-6xl px-20 py-5 max-sm:px-36">
                 <span>
@@ -222,12 +245,13 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
+          <hr />
           {/* -------------Next line-----------  */}
           <ScrollTrigger
             onEnter={() => setCounter(true)}
             onExit={() => setCounter(false)}
           >
-            <div className="flex flex-wrap max-sm:justify-center justify-between pr-20 max-sm:pr-0 py-10 max-sm:pb-5">
+            <div className="flex flex-wrap gap-28 justify-center  max-sm:pr-0 py-5 max-sm:pb-5">
               <div className="font-bold flex items-start py-10 max-sm:py-1 gap-4">
                 {counter && (
                   <CountUp start={0} end={85}>
@@ -311,12 +335,12 @@ export default function HomePage() {
           </ScrollTrigger>
         </div>
         {/* -----------our benefit section--------------- */}
-        <div className="bg-[#f0eee9] py-20">
+        <div className="bg-[#F7F7F7] py-20">
           <div className="text-center">
             <p className="font-semibold text-red-500 ">OUR BENEFIT</p>
             <p className="font-bold text-3xl ">Why Choose Homeya</p>
           </div>
-          <div className="flex flex-wrap justify-between p-10">
+          <div className="flex flex-wrap justify-center gap-10 my-4 ">
             <div className="text-center w-[400px]">
               <p className="pl-32 m-5 max-sm:pl-24">
                 <span className=" text-8xl ">
@@ -324,7 +348,7 @@ export default function HomePage() {
                 </span>
               </p>
               <h1 className="font-bold text-2xl p-1 ">Proven Expertise</h1>
-              <p>
+              <p className="font-semibold text-[#5C6368]">
                 Our seasoned team excels in real estate with years of successful
                 market navigation, offering informed decisions and optimal
                 results.
@@ -337,7 +361,7 @@ export default function HomePage() {
                 </span>
               </p>
               <h1 className="font-bold text-2xl p-1 ">Customized Solutions</h1>
-              <p>
+              <p className="font-semibold text-[#5C6368]">
                 We pride ourselves on crafting personalized strategies to match
                 your unique goals, ensuring a seamless real estate journey.
               </p>
@@ -351,7 +375,7 @@ export default function HomePage() {
               <h1 className="font-bold text-2xl p-1 ">
                 Transparent Partnerships
               </h1>
-              <p>
+              <p className="font-semibold text-[#5C6368]">
                 Transparency is key in our client relationships. We prioritize
                 clear communication and ethical practices, fostering trust and
                 reliability throughout.
@@ -360,64 +384,83 @@ export default function HomePage() {
           </div>
         </div>
         {/* -------------------Top properties section------------------ */}
-        <div className="px-5 my-20 max-sm:hidden ">
-          <div className="text-left  ">
+        <div className=" my-20 max-sm:hidden ">
+          <div className=" text-center ">
             <p className=" uppercase font-semibold text-red-500 py-2 ">
               top propertises
             </p>
-            <p className=" capitalize font-bold text-3xl flex justify-between">
-              best property value
-              <span className="text-lg">
-                <Button2 />
-              </span>
+            <p className="capitalize font-bold text-3xl ">
+              <h1>best property value</h1>
             </p>
           </div>
-          <div className="flex flex-wrap max-sm:mx-4 justify-between mx-20 ">
-            <div className="h-[500px] mt-10 my-4 hover:overflow-hidden shadow-lg  border-2 w-[500px] rounded-2xl">
-              <div className=" hover:scale-105 ">
-                <img
-                  className="h-full w-[500px] rounded-t-2xl "
-                  src={house1}
-                  alt=""
-                />
+          <div className=" flex flex-wrap max-sm:mx-4 justify-center gap-10  ">
+            <div className=" mt-10 my-4 shadow-lg overflow-hidden  border-2 w-[600px] rounded-2xl">
+              <div className="overflow-hidden">
+                <div className="flex uppercase absolute z-10 items-center cursor-pointer ">
+                  <h1 className="font-bold text-white text-lg bg-green-500 m-3 px-2 rounded-md ">
+                    Featured
+                  </h1>
+                  <h1 className="font-semibold text-lg bg-white hover:bg-red-500 px-2 rounded-md  ">
+                    For Sale
+                  </h1>
+                </div>
+                <div className="flex uppercase absolute z-10 items-center cursor-pointer pt-[310px] pl-2 ">
+                  <h1 className="font-semibold text-lg bg-white hover:bg-red-500 px-2 rounded-md  ">
+                    Villa
+                  </h1>
+                </div>
+                <div className=" hover:scale-105 h-[350px] duration-300 overflow-hidden">
+                  <img src={house1} alt="" />
+                </div>
               </div>
-              <h1 className="font-bold text-xl px-4 py-2">
+              <h1 className="font-bold capitalize text-3xl px-4 py-4">
                 rancho vista verde, santa barbara
               </h1>
-              <p className="font-semibold px-4 pb-2">
+              <p className=" flex items-center text-[#5C6368] text-lg font-semibold px-4 pb-4">
+                <IoLocationOutline />
                 145 Brooklyn Ave, Califonia, New York
               </p>
-              <p className="font-semibold px-4 pb-2">
+              <p className="font-semibold text-xl px-4 pb-4">
                 "I truly appreciate the professionalism and in-depth...
               </p>
-              <ul className="flex justify-between mr-8 mt-2 text-2xl ">
-                <li className="flex gap-4 px-4">
+              <ul className="flex gap-10 pb-4 text-3xl ">
+                <li className="flex gap-2 px-4">
                   <PiBedLight />
-                  <span className=" text-base font-bold"> 4 </span>
+                  <span className=" text-xl font-bold"> 4 </span>
                 </li>
-                <li className="flex gap-4">
+                <li className="flex gap-2">
                   <PiBathtubThin />
-                  <span className=" text-base font-bold"> 2 </span>
+                  <span className=" text-xl font-bold"> 2 </span>
                 </li>
-                <li className="flex gap-4">
+                <li className="flex gap-2">
                   <CiRuler />
-                  <span className=" text-base font-bold">600 sqFT</span>
+                  <span className=" text-xl font-bold">600 sqFT</span>
                 </li>
               </ul>
+              <hr />
+              <div className="flex items-center py-6 px-4 justify-between">
+                <div className="flex items-center gap-2">
+                  <div className="w-10 h-10 bg-gray-200 rounded-full overflow-hidden">
+                    <img src={user} alt="" />
+                  </div>
+                  <h1 className="font-semibold text-gray-500">Ralph Edward</h1>
+                </div>
+                <div className="flex font-bold items-center ">
+                  <p className="font-extrabold text-xl">$7250,00</p>
+                  <p className="text-gray-500">/month</p>
+                </div>
+              </div>
             </div>
-            <div className=" mt-10">
-              <p className="mb-6">
-                <Cards3 />
-              </p>
-              <p>
-                <Cards3 />
-              </p>
+            <div className=" mt-10 ">
+              <Cards3 />
+              <Cards3 />
+              <Cards3 />
             </div>
           </div>
         </div>
         {/* --------------review section---------------------- */}
-        <div className="bg-[#f0eee9] py-20">
-          <div className="flex flex-wrap justify-between">
+        <div className="bg-[#F7F7F7] py-20">
+          <div className="flex flex-wrap justify-center">
             <div>
               <p className="text-red-500 font-semibold">TOP PROPERTISE</p>
               <h1 className="text-3xl font-bold py-4">
@@ -448,8 +491,9 @@ export default function HomePage() {
         <div className="py-20 text-center">
           <p className="text-red-500 font-semibold">OUR TEAM</p>
           <h1 className="text-3xl font-bold mb-10">Meet Our Agents</h1>
-          {/* <div className="flex gap-4 mx-4 my-10"> */}
-          <Carousel responsive={responsive}>{Team}</Carousel>;
+          <div className="flex gap-10 justify-center">
+            {Team}
+          </div>
         </div>
       </main>
 
