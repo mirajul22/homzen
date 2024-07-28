@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../../components/Header/Index";
 import Footer from "../../components/Footer/Index";
 import { FaArrowRight } from "react-icons/fa";
@@ -13,10 +13,17 @@ import { Partners } from "../../components/faqs/Faqs";
 import TeamCart from "../../components/teamCart/TeamCart";
 import { teamData } from "../../components/teamCart/teamData";
 import banner from "../../images/banner.png";
+import Aos from "aos";
+import "aos/dist/aos.css";
+
 export default function AboutUs() {
   const Team = teamData.map((d) => (
     <TeamCart name={d.name} image={d.image} post={d.post} />
   ));
+
+  useEffect(() => {
+    Aos.init();
+  }, []);
   return (
     <div>
       <header>
@@ -24,13 +31,19 @@ export default function AboutUs() {
       </header>
 
       <main>
-        <div className="bg-[#f0eee9] font-bold text-5xl max-sm:text-3xl max-sm:h-20 text-center py-32">
+        <div className="bg-[#f7f7f7] font-bold text-5xl max-sm:text-3xl max-sm:h-20 text-center py-32">
           <h1>About Us </h1>
         </div>
         {/* --------------section start---------------- */}
-        <div className="my-20 mx-10">
-          <div className="flex flex-wrap max-sm:text-center justify-between items-center">
-            <h1 className="text-5xl w-[350px] font-bold ">Welcome To The Homzen</h1>
+        <div
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          className="my-20 justify-center "
+        >
+          <div className="flex flex-wrap  max-sm:text-center justify-center gap-36 items-center">
+            <h1 className="text-5xl w-[350px] font-bold ">
+              Welcome To The Homzen
+            </h1>
             <p className="w-[750px] max-sm:w-full text-lg text-[#6f6f6f]">
               Welcome to Homeya, where we turn houses into homes and dreams into
               reality. At Homeya, we understand that a home is more than just a
@@ -44,7 +57,11 @@ export default function AboutUs() {
               </Link>
             </p>
           </div>
-          <div className="backimg my-10 max-sm:my-5 h-[500px] rounded-3xl">
+          <div
+            data-aos="fade-up-right"
+            data-aos-duration="1000"
+            className="backimg my-10 max-sm:my-5 w-[1250px] justify-center h-[500px] rounded-3xl mx-auto"
+          >
             <div className=" mx-[48%] py-48">
               <Link className="text-8xl  ">
                 <span className="text-red-600 ">
@@ -55,8 +72,12 @@ export default function AboutUs() {
           </div>
         </div>
         {/*  --------------why choose us ------------------ */}
-        <div className="flex flex-wrap justify-between items-center my-10 ">
-          <div className="m-10 items-center w-[500px]">
+        <div className="flex flex-wrap justify-center gap-24 items-center my-10 ">
+          <div
+            data-aos="fade-left"
+            data-aos-duration="1000"
+            className="m-10 items-center w-[500px]"
+          >
             <p className="font-bold uppercase text-red-500 text-lg">
               why choose us
             </p>
@@ -84,7 +105,10 @@ export default function AboutUs() {
                 <IoCheckmarkCircleSharp /> local area knowledge
               </h2>
             </div>
-            <Link to="/contact_us" className="flex items-center underline  font-bold ">
+            <Link
+              to="/contact_us"
+              className="flex items-center underline  font-bold "
+            >
               Contact Us
               <IoIosArrowRoundForward className="text-red-500 hover:translate-x-4 text-xl" />
             </Link>
@@ -95,25 +119,39 @@ export default function AboutUs() {
         </div>
         {/* -----------------our testimonial ----------------- */}
         <div>
-          <div className="font-bold text-center my-10 ">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            className="font-bold text-center my-10 "
+          >
             <p className="text-md uppercase text-red-500">our testimonials</p>
             <h1 className="text-3xl capitalize my-4">what's people say's</h1>
           </div>
         </div>
-        <ReviewCart2 />
+        <div data-aos="fade-right" data-aos-duration="1000">
+          <ReviewCart2 />
+        </div>
         {/* --------------partners ---------- */}
         <Partners />
         {/* --------------our team ------------ */}
-        <p className="font-bold text-center uppercase text-md text-red-500">
-          our team
-        </p>
-        <h1 className="font-bold text-center text-3xl my-4 ">
-          Meet Our Agents
-        </h1>
-        <div className="flex flex-wrap text-center my-2 justify-between  max-sm:justify-center">{Team}</div>
+        <div data-aos="fade-up" data-aos-duration="1000">
+          <p className="font-bold text-center uppercase text-md text-red-500">
+            our team
+          </p>
+          <h1 className="font-bold text-center text-3xl my-4 ">
+            Meet Our Agents
+          </h1>
+        </div>
+        <div className="flex flex-wrap my-2 justify-center gap-10  max-sm:justify-center">
+          {Team}
+        </div>
         {/* -----------become partners---------- */}
-        <div>
-          <div className=" flex flex-wrap items-center font-bold pl-20 bg-[#e1e1e1] my-20 mx-10 rounded-3xl ">
+        <div
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          className="w-[1250px] mx-auto"
+        >
+          <div className=" flex flex-wrap items-center font-bold pl-12 bg-[#e1e1e1] my-20  rounded-3xl ">
             <div>
               <p className="uppercase text-md text-red-500 py-4">
                 become partners
@@ -139,7 +177,7 @@ export default function AboutUs() {
         </div>
       </main>
 
-      <footer>
+      <footer data-aos="fade-up" data-aos-duration="1000">
         <Footer />
       </footer>
     </div>

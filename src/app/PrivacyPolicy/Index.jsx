@@ -20,7 +20,7 @@ export default function PrivacyPolicy() {
       </header>
 
       <main>
-        <div className="bg-[#f0eee9] font-bold text-5xl text-center py-32">
+        <div className="bg-[#f7f7f7] font-bold text-5xl text-center py-32">
           <h1>Privacy Policy </h1>
         </div>
         <h1 className="text-3xl max-sm:text-xl font-bold text-center py-10">Terms Of Use</h1>

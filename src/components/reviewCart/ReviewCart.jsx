@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaStar } from "react-icons/fa";
 import agent1 from "../../images/agent-1.jpg";
 import agent2 from "../../images/agent-2.jpg";
+import Aos from "aos";
+import "aos/dist/aos.css"
 
 export default function ReviewCart() {
+  useEffect(()=>{
+    Aos.init();
+  },[]);
+
   return (
-    <div className=" flex flex-wrap gap-8 w-full  ">
+    <div className="flex flex-1 gap-5 w-full ">
       {cartData.map((data) => (
-        <div className="w-[400px] px-4 pt-10 h-[400px] max-sm:w-[350px] rounded-2xl bg-white">
+        <div data-aos="fade-right" data-aos-duration="1000" className="w-[450px] p-4 max-sm:w-[350px] rounded-2xl bg-white">
           <span className="flex text-yellow-500 gap-2 text-2xl py-2">
             <FaStar />
             <FaStar />
@@ -40,11 +46,12 @@ const cartData = [
     name: "Adam Will",
     post: "CEO Agency",
   },
+ 
 ];
 
 function ReviewCart2() {
   return (
-    <div className=" flex flex-wrap gap-10 m-10 ">
+    <div className=" flex flex-wrap gap-10  justify-center ">
       {cartData.map((data) => (
         <div className="border-2 w-[350px] rounded-3xl bg-gray-100 p-6">
           <span className="flex text-yellow-500 gap-2 text-2xl py-2">

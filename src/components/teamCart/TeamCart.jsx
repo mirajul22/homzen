@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { IoIosCall } from "react-icons/io";
+import Aos from "aos";
+import "aos/dist/aos.css"
 
 export default function TeamCart(props) {
+  useEffect(()=>{
+      Aos.init()
+  },[])
   return (
     <>
-      <div className=" w-[280px] group ">
+      <div data-aos="slide-right" data-aos-duration="1000" className=" w-[280px] group ">
         <div className="">
           <div className="overflow-hidden rounded-xl">
             <img
-              className="rounded-2xl hover:scale-105 duration-500 "
+              className="rounded-2xl group-hover:scale-110 duration-500 "
               src={props.image}
               alt=""
             />

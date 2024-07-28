@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { IoLocationOutline } from "react-icons/io5";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { FaCheckCircle } from "react-icons/fa";
@@ -10,17 +10,29 @@ import house5 from "../../images/house-5.jpg";
 import house6 from "../../images/house-6.jpg";
 import house7 from "../../images/house-7.jpg";
 import user from "../../images/agent-1.jpg";
+import homeRent from "../../images/rent.png";
+import homeBuy from "../../images/buy (1).png";
+import homeSale from "../../images/for-sale.png";
 import { FcHome } from "react-icons/fc";
 import { PiBathtubThin } from "react-icons/pi";
 import { PiBedLight } from "react-icons/pi";
 import { CiRuler } from "react-icons/ci";
 import "./style.css";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 export default function Cards() {
+  useEffect(() => {
+    Aos.init();
+  }, []);
   return (
     <div className="flex flex-wrap justify-center gap-10 ">
       {CardsData.map((data) => (
-        <div className=" block hover:overflow-hidden shadow-xl w-[400px] pb-4 max-sm:w-[350px]   border-2 rounded-xl">
+        <div
+          data-aos="fade-left"
+          data-aos-duration="1000"
+          className=" block group group-hover:overflow-hidden shadow-xl w-[400px] pb-4 max-sm:w-[350px]   border-2 rounded-xl"
+        >
           <div className="flex uppercase absolute z-10 items-center cursor-pointer ">
             <h1 className="font-bold text-white text-sm bg-green-500 m-3 px-2 rounded-md ">
               Featured
@@ -37,7 +49,7 @@ export default function Cards() {
 
           <div className="h-[280px] overflow-hidden block ">
             <img
-              className=" block hover:scale-110 hover:ease-linear hover:duration-300  rounded-t-xl h-[280px] cursor-pointer"
+              className=" block group-hover:scale-110 ease-linear duration-300  rounded-t-xl h-[280px] cursor-pointer"
               src={data.image}
               alt=""
             />
@@ -99,10 +111,12 @@ function Cards3() {
       <div className="backimg w-[250px] h-[200px] font-bold text-base p-2">
         <p className="bg-green-500 w-24 px-2 rounded-md text-white">FEATURED</p>
         <p className=" bg-white w-24 rounded-md text-center  mt-1">FOR SALE</p>
-        <p className="bg-white w-20 mt-36  px-4 rounded-md"> House</p>
+        <p className="bg-white w-20 mt-28  px-4 rounded-md">House</p>
       </div>
       <div className=" p-3">
-        <h1 className="font-bold text-lg pb-2">Case Lomas De Machali Machas</h1>
+        <h1 className="font-bold hover:text-red-500 text-lg pb-2">
+          Case Lomas De Machali Machas
+        </h1>
         <p className="flex gap-2 pb-2 items-center">
           <IoLocationOutline /> 33 Maple Street, San Francisco, California
         </p>
@@ -206,19 +220,40 @@ const CardsData = [
 // -----------------our services------------------
 
 function CartOurServices() {
+  const [show, setShow] = useState({
+    0: false,
+    1: true,
+    2: false,
+  });
   return (
-    <div className="flex flex-wrap gap-8 m-10 max-sm:justify-center ">
-      {services.map((d) => (
-        <div className=" group text-center p-10 border-2 w-[400px] max-sm:w-[350px] rounded-3xl hover:bg-[#d1cfcf]">
+    <div className="flex flex-wrap gap-8 justify-center my-10 max-sm:justify-center ">
+      {services.map((d, i) => (
+        <div
+          onClick={() => {
+            setShow({
+              ...show,
+              [i]: !show[i],
+            });
+          }}
+          className={
+            show[i]
+              ? " group text-center p-10 w-[400px] max-sm:w-[350px] rounded-3xl bg-[#f7f7f7]"
+              : "group text-center p-10  w-[400px] max-sm:w-[350px] rounded-3xl hover:bg-[#f7f7f7] "
+          }
+        >
           <p className="text-6xl px-20 py-5">
-            <span>
-              <FcHome className=" mx-14 max-sm:mx-7" />
-            </span>
+          <div className="pl-8 group-hover:-scale-x-100 duration-500 ">
+            <img src={d.image} alt="" width={100} />
+          </div>
           </p>
           <h1 className="text-2xl font-bold p-2">{d.title}</h1>
           <p className="p-2">{d.description}</p>
           <button
-            className=" m-4 font-bold border-2 border-black py-2 px-4 group-hover:bg-red-500 group-hover:text-white"
+            className={
+              show[i]
+                ? " m-4 font-bold  py-3 px-4 bg-red-500 text-white rounded-lg"
+                : " m-4 font-bold border-2 border-black py-3 px-4 rounded-lg group-hover:bg-red-500 group-hover:text-white group-hover:border-none"
+            }
             type="button"
           >
             {d.text}
@@ -236,20 +271,23 @@ const services = [
     description:
       "Discover your dream home effortlessly. Explore  diverse properties and expert guidance for a seamless buying experience.",
     text: "Find A Home",
+    image: homeBuy
   },
 
   {
-    title: "Buy A New Home",
+    title: "Rent A  Home",
     description:
       "Discover your dream home effortlessly. Explore diverse properties and expert guidance for a seamless buying experience.",
     text: "Find A Rental",
+    image: homeRent
   },
 
   {
-    title: "Buy A New Home",
+    title: "Sale A Home",
     description:
       "Discover your dream home effortlessly. Explore diverse properties and expert guidance for a seamless buying experience.",
     text: "Submit Property",
+    image: homeSale
   },
 ];
 

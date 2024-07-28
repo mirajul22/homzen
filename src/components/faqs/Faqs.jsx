@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import partner1 from "../../images/gxi.svg"
-import partner2 from "../../images/panadoxn.svg"
-import partner3 from "../../images/tech.svg"
-import partner4 from "../../images/tyalpa.svg"
-import partner5 from "../../images/vanfaba.svg"
-
+import partner1 from "../../images/gxi.svg";
+import partner2 from "../../images/panadoxn.svg";
+import partner3 from "../../images/tech.svg";
+import partner4 from "../../images/tyalpa.svg";
+import partner5 from "../../images/vanfaba.svg";
 
 export default function Faqs() {
   const [data] = useState(questions);
@@ -20,17 +19,16 @@ export default function Faqs() {
       {data.map((ques, index) => {
         return (
           <div className="my-4 cursor-pointer max-sm:justify-center max-sm:w-[90%]">
-            <div className=" flex justify-between rounded-xl text-xl max-sm:w-full max-sm:text-lg max-sm:py-2 max-sm:mx-4 font-bold border-2 w-1/2 ml-[25%] py-4 px-3">
+            <div
+              onClick={() => {
+                setShow({
+                  [index]: !show[index],
+                });
+              }}
+              className=" flex justify-between rounded-xl text-xl max-sm:w-full max-sm:text-lg max-sm:py-2 max-sm:mx-4 font-bold border-2 w-1/2 ml-[25%] py-4 px-3"
+            >
               {ques.ques}
-              <p
-                className="text-3xl items-center max-sm:text-lg  "
-                onClick={() => {
-                  setShow({
-                    ...show,
-                    [index]: !show[index]
-                  });
-                }}
-              >
+              <p className="text-3xl items-center max-sm:text-lg  ">
                 {show[index] ? "-" : "+"}
               </p>
             </div>
@@ -81,39 +79,38 @@ const questions = [
   },
 ];
 
-
 // -----------------company partners -------------------
 
-function Partners(){
-  return(
-    <div className="flex max-sm:hidden justify-between m-20">
+function Partners() {
+  return (
+    <div className="flex max-sm:hidden justify-center my-20 gap-20">
       {companyData.map((d) => (
         <img src={d.image} alt="" />
       ))}
     </div>
-  )
+  );
 }
 
-export {Partners}
+export { Partners };
 
 const companyData = [
   {
-    image: partner1
+    image: partner1,
   },
 
   {
-    image: partner2
+    image: partner2,
   },
 
   {
-    image: partner3
+    image: partner3,
   },
 
   {
-    image: partner4
+    image: partner4,
   },
 
   {
-    image: partner5
+    image: partner5,
   },
-]
+];

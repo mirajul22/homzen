@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import Aos from "aos";
 
 export default function Login({ handleClose }) {
+  useEffect(()=>{
+    Aos.init({duration:300})
+  },[])
   return (
     <div>
-      <div className="absolute right-[35%] active:right-[35%] top-[50%]  rounded-xl bg-[#f1f1f1] border-2 w-[500px]  p-8">
+      <div data-aos="zoom-in" className="absolute right-[35%] active:right-[35%] top-[50%]  rounded-xl bg-[#f1f1f1] border-2 w-[500px]  p-8">
         <div
           onClick={handleClose}
           className="close-btn absolute right-4 top-2 text-4xl"

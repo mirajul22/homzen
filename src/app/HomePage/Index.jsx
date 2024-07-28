@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { PiFaders } from "react-icons/pi";
 import { FaArrowRight } from "react-icons/fa";
-import { FcHome } from "react-icons/fc";
 import { LiaPencilRulerSolid } from "react-icons/lia";
 import { FaHandHoldingHand } from "react-icons/fa6";
 import { IoIosArrowBack } from "react-icons/io";
@@ -14,8 +13,8 @@ import Header from "../../components/Header/Index";
 import Footer from "../../components/Footer/Index";
 import { Link } from "react-router-dom";
 import "./index.css";
-import Buttons, { Button2 } from "../../components/Buttons";
-import Cards, {  Cards3 } from "../../components/Cards";
+import Buttons from "../../components/Buttons";
+import Cards, { Cards3 } from "../../components/Cards";
 import house1 from "../../images/house-1.jpg";
 import ReviewCart from "../../components/reviewCart/ReviewCart";
 import CountUp from "react-countup";
@@ -26,19 +25,31 @@ import TeamCart from "../../components/teamCart/TeamCart";
 import { teamData } from "../../components/teamCart/teamData";
 import { IoLocationOutline } from "react-icons/io5";
 import user from "../../images/agent-1.jpg";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import homeRent from "../../images/rent.png";
+import homeBuy from "../../images/buy (1).png";
+import homeSale from "../../images/for-sale.png";
 
 export default function HomePage() {
   const [counter, setCounter] = useState(false);
-  const [showButton] = useState(true);
-  const [btn, setBtn] = useState(false);
+  const [showBtn, setShowBtn] = useState({
+    0: true,
+    1: false,
+  });
 
-  const handlebtn = () => {
-    setBtn(true);
-  };
+  useEffect(() => {
+    Aos.init();
+  }, []);
 
-  const handlebtn2 = () => {
-    setBtn(false);
-  };
+  const dataBtn = [
+    {
+      name: "FOR RENT",
+    },
+    {
+      name: "FOR SALE",
+    },
+  ];
 
   //------------------------  our team section -------------------------
 
@@ -74,29 +85,25 @@ export default function HomePage() {
                 house?
               </p>
             </div>
-            <div className="font-bold mt-12 ">
-              <button
-                onClick={handlebtn}
-                className={
-                  btn
-                    ? "p-5 text-lg rounded-md mr-1 bg-white text-black bg-[hsla(0,0%,100%,.1)] "
-                    : ""
-                }
-                type="text"
-              >
-                FOR RENT
-              </button>
-              <button
-                onClick={handlebtn2}
-                className={
-                  !btn
-                    ? "p-5 text-lg rounded-md bg-hsla(0,0%,100%,.1) hover:bg-white hover:text-black "
-                    : ""
-                }
-                type="text"
-              >
-                FOR SALE
-              </button>
+            <div className="flex font-bold gap-4 justify-center mt-10 ">
+              {dataBtn.map((d, i) => {
+                return (
+                  <button
+                    onClick={() => {
+                      setShowBtn({
+                        [i]: !showBtn[i],
+                      });
+                    }}
+                    className={
+                      showBtn[i]
+                        ? "p-5 text-lg rounded-md mr-1 bg-white text-black "
+                        : "p-5 text-lg rounded-md mr-1  text-white bg-[hsla(0,0%,100%,.1)] "
+                    }
+                  >
+                    {d.name}
+                  </button>
+                );
+              })}
             </div>
             {/* find propertise section  -----start---------- */}
             <form className="flex flex-wrap max-sm:flex-col max-sm:h-52 font-semibold w-[90%] rounded-lg bg-white justify-between mx-[5%] text-black m-[-4px] h-24  text-left">
@@ -135,7 +142,7 @@ export default function HomePage() {
                   Advanced
                 </div>
               </div>
-              <div className=" max-sm:my-4 max-sm:text-center max-sm:rounded-lg py-8 rounded-r-lg px-5 font-bold text-white bg-red-500 hover:bg-red-700 ">
+              <div className=" max-sm:my-4 max-sm:text-center text-xl max-sm:rounded-lg py-8 rounded-r-lg px-5 font-bold text-white bg-red-500 hover:bg-red-700 ">
                 <button>Find Propertise</button>
               </div>
             </form>
@@ -144,12 +151,20 @@ export default function HomePage() {
       </hero>
 
       <main>
-        <div className="relative text-center font-bold mb-10 mt-20 ">
+        <div
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          className="relative text-center font-bold mb-10 mt-20 "
+        >
           <p className="text-1xl text-red-500">FEATURED PROPERTIES</p>
           <h1 className="text-3xl ">Recommended For You</h1>
         </div>
-        <div className="flex max-sm:ml-[150px] max-sm:flex-col justify-center gap-4 mb-5 ">
-          {showButton ? <Button2 /> : <Buttons />}
+        <div
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          className="flex max-sm:ml-[150px] max-sm:flex-col justify-center gap-4 mb-5 "
+        >
+          <Buttons />
         </div>
         <div className="flex flex-wrap  p-8">
           <Cards />
@@ -170,28 +185,37 @@ export default function HomePage() {
           </div>
         </div> */}
         {/* ---------our services------- */}
-        <div className="">
-          {/* <div className="justify-center bg-red-300"> */}
-          <div className="flex justify-center items-center p-4 gap-[900px]  pt-2">
+        <div>
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            className="flex justify-center items-center p-4 gap-[900px]  pt-2"
+          >
             <div>
               <h1 className="text-red-500  font-semibold ">OUR SERVICES</h1>
               <h1 className="text-3xl font-bold">What We Do?</h1>
             </div>
-            <Link className="flex items-center gap-2 underline font-semibold  ">
+            <Link
+              to="./our_services"
+              className="flex items-center gap-2 underline font-semibold  "
+            >
               View All Services
               <span className="text-red-500">
                 <FaArrowRight />
               </span>
             </Link>
           </div>
-          {/* </div> */}
-          <div className="flex flex-wrap max-sm:text-center gap-20  justify-center mb-10">
-            <div>
-              <p className="text-6xl px-20 py-5 max-sm:px-36">
-                <span>
-                  <FcHome />
-                </span>
-              </p>
+
+          <div
+            data-aos="fade-left"
+            data-aos-duration="1000"
+            className="flex flex-wrap max-sm:text-center gap-20  justify-center mb-10"
+          >
+            <div className="group">
+              <div className="pl-2 w-[100px] group-hover:-scale-x-100 duration-500 ">
+                <img src={homeBuy} alt="" width={100} />
+              </div>
+
               <h1 className="text-2xl font-bold p-2">Buy A New Home</h1>
               <p className="p-2">
                 Discover your dream home effortlessly. Explore
@@ -205,12 +229,12 @@ export default function HomePage() {
                 </span>
               </Link>
             </div>
-            <div>
-              <p className="text-6xl px-20 py-5 max-sm:px-36">
-                <span>
-                  <FcHome />
-                </span>
-              </p>
+
+            <div className="group">
+              <div className="pl-2 w-[100px] group-hover:-scale-x-100 duration-500 ">
+                <img src={homeRent} alt="" width={100} />
+              </div>
+
               <h1 className="text-2xl font-bold p-2">Rent A Home</h1>
               <p className="p-2">
                 Discover your perfect rental effortlessly. Explore a<br />{" "}
@@ -224,13 +248,12 @@ export default function HomePage() {
                 </span>
               </Link>
             </div>
-            <div>
-              <p className="text-6xl px-20 py-5 max-sm:px-36">
-                {" "}
-                <span>
-                  <FcHome />
-                </span>
-              </p>
+
+            <div className="group">
+              <div className="pl-2 w-[100px]  group-hover:-scale-x-100 duration-500 ">
+                <img src={homeSale} alt="" width={100} />
+              </div>
+
               <h1 className="text-2xl font-bold p-2">Sell A Home</h1>
               <p className="p-2">
                 Sell confidently with expert guidance and effective
@@ -336,11 +359,19 @@ export default function HomePage() {
         </div>
         {/* -----------our benefit section--------------- */}
         <div className="bg-[#F7F7F7] py-20">
-          <div className="text-center">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            className="text-center"
+          >
             <p className="font-semibold text-red-500 ">OUR BENEFIT</p>
             <p className="font-bold text-3xl ">Why Choose Homeya</p>
           </div>
-          <div className="flex flex-wrap justify-center gap-10 my-4 ">
+          <div
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            className="flex flex-wrap justify-center gap-10 my-4 "
+          >
             <div className="text-center w-[400px]">
               <p className="pl-32 m-5 max-sm:pl-24">
                 <span className=" text-8xl ">
@@ -384,8 +415,12 @@ export default function HomePage() {
           </div>
         </div>
         {/* -------------------Top properties section------------------ */}
-        <div className=" my-20 max-sm:hidden ">
-          <div className=" text-center ">
+        <div className="group my-20 max-sm:hidden ">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            className=" text-center "
+          >
             <p className=" uppercase font-semibold text-red-500 py-2 ">
               top propertises
             </p>
@@ -394,7 +429,11 @@ export default function HomePage() {
             </p>
           </div>
           <div className=" flex flex-wrap max-sm:mx-4 justify-center gap-10  ">
-            <div className=" mt-10 my-4 shadow-lg overflow-hidden  border-2 w-[600px] rounded-2xl">
+            <div
+              data-aos="fade-right"
+              data-aos-duration="1000"
+              className=" mt-10 my-4 shadow-lg overflow-hidden  border-2 w-[600px] rounded-2xl"
+            >
               <div className="overflow-hidden">
                 <div className="flex uppercase absolute z-10 items-center cursor-pointer ">
                   <h1 className="font-bold text-white text-lg bg-green-500 m-3 px-2 rounded-md ">
@@ -409,11 +448,11 @@ export default function HomePage() {
                     Villa
                   </h1>
                 </div>
-                <div className=" hover:scale-105 h-[350px] duration-300 overflow-hidden">
+                <div className=" group-hover:scale-110 h-[350px] duration-300 overflow-hidden">
                   <img src={house1} alt="" />
                 </div>
               </div>
-              <h1 className="font-bold capitalize text-3xl px-4 py-4">
+              <h1 className="font-bold capitalize hover:text-red-500 text-3xl px-4 py-4">
                 rancho vista verde, santa barbara
               </h1>
               <p className=" flex items-center text-[#5C6368] text-lg font-semibold px-4 pb-4">
@@ -459,9 +498,9 @@ export default function HomePage() {
           </div>
         </div>
         {/* --------------review section---------------------- */}
-        <div className="bg-[#F7F7F7] py-20">
-          <div className="flex flex-wrap justify-center">
-            <div>
+        <div className="bg-[#F7F7F7] py-20 ">
+          <div className="flex  justify-center gap-5 ">
+            <div data-aos="fade-left" data-aos-duration="1000">
               <p className="text-red-500 font-semibold">TOP PROPERTISE</p>
               <h1 className="text-3xl font-bold py-4">
                 What's People
@@ -481,23 +520,29 @@ export default function HomePage() {
                 </button>
               </div>
             </div>
-            <div className=" mx-22 max-sm:mx-4">
+            <div
+              data-aos="fade-up-right"
+              data-aos-duration="1000"
+              className="   max-sm:mx-4"
+            >
               <ReviewCart />
             </div>
           </div>
         </div>
         {/* -----------------our team section---------------- */}
 
-        <div className="py-20 text-center">
+        <div
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          className="py-20 text-center"
+        >
           <p className="text-red-500 font-semibold">OUR TEAM</p>
           <h1 className="text-3xl font-bold mb-10">Meet Our Agents</h1>
-          <div className="flex gap-10 justify-center">
-            {Team}
-          </div>
+          <div className="flex gap-10 justify-center">{Team}</div>
         </div>
       </main>
 
-      <footer>
+      <footer data-aos="fade-up" data-aos-duration="1000">
         <Footer />
       </footer>
     </div>

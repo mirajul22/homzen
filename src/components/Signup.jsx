@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import Aos from 'aos'
 
 export default function Signup({handleClose}) {
+  useEffect(()=>{
+    Aos.init({duration:300})
+  },[])
   return (
     <div className="popup">
-          <div className="absolute right-[35%]  top-[50%]  py-10 p-8 rounded-xl bg-[#f1f1f1] border-2 w-[500px] ">
+          <div data-aos="zoom-in" className="absolute right-[35%]  top-[50%]  py-10 p-8 rounded-xl bg-[#f1f1f1] border-2 w-[500px] ">
             <div onClick={handleClose}  className="close-btn absolute right-4 top-2 text-4xl">
               &times;
             </div>
@@ -16,6 +20,7 @@ export default function Signup({handleClose}) {
                 className="border-2 w-full py-4 focus:outline-none my-2 rounded-lg px-2 "
                 placeholder="example@gmail.com"
                 type="text"
+                required
                 // value={username}
                 // onChange={(event) => setUsername(event.target.value)}
               />
@@ -26,6 +31,7 @@ export default function Signup({handleClose}) {
                 className="border-2 w-full py-4 focus:outline-none my-2 rounded-lg px-2 "
                 placeholder="Enter Your Password"
                 type="password"
+                required
                 // value={username}
                 // onChange={(event) => setUsername(event.target.value)}
               />
