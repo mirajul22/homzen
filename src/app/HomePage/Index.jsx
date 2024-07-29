@@ -40,6 +40,16 @@ export default function HomePage() {
 
   useEffect(() => {
     Aos.init();
+
+    (async function () {
+      try {
+        const response = await fetch("http://localhost:8000/fake-api/product");
+        const data = await response.text();
+        console.log("API => ", data);
+      } catch (error) {
+        console.log("FETCH ERROR => ", error);
+      }
+    })();
   }, []);
 
   const dataBtn = [
@@ -98,8 +108,7 @@ export default function HomePage() {
                       showBtn[i]
                         ? "p-5 text-lg rounded-md mr-1 bg-white text-black "
                         : "p-5 text-lg rounded-md mr-1  text-white bg-[hsla(0,0%,100%,.1)] "
-                    }
-                  >
+                    }>
                     {d.name}
                   </button>
                 );
@@ -154,16 +163,14 @@ export default function HomePage() {
         <div
           data-aos="fade-up"
           data-aos-duration="1000"
-          className="relative text-center font-bold mb-10 mt-20 "
-        >
+          className="relative text-center font-bold mb-10 mt-20 ">
           <p className="text-1xl text-red-500">FEATURED PROPERTIES</p>
           <h1 className="text-3xl ">Recommended For You</h1>
         </div>
         <div
           data-aos="fade-up"
           data-aos-duration="1000"
-          className="flex max-sm:ml-[150px] max-sm:flex-col justify-center gap-4 mb-5 "
-        >
+          className="flex max-sm:ml-[150px] max-sm:flex-col justify-center gap-4 mb-5 ">
           <Buttons />
         </div>
         <div className="flex flex-wrap  p-8">
@@ -189,16 +196,14 @@ export default function HomePage() {
           <div
             data-aos="fade-up"
             data-aos-duration="1000"
-            className="flex justify-center items-center p-4 gap-[900px]  pt-2"
-          >
+            className="flex justify-center items-center p-4 gap-[900px]  pt-2">
             <div>
               <h1 className="text-red-500  font-semibold ">OUR SERVICES</h1>
               <h1 className="text-3xl font-bold">What We Do?</h1>
             </div>
             <Link
               to="./our_services"
-              className="flex items-center gap-2 underline font-semibold  "
-            >
+              className="flex items-center gap-2 underline font-semibold  ">
               View All Services
               <span className="text-red-500">
                 <FaArrowRight />
@@ -209,8 +214,7 @@ export default function HomePage() {
           <div
             data-aos="fade-left"
             data-aos-duration="1000"
-            className="flex flex-wrap max-sm:text-center gap-20  justify-center mb-10"
-          >
+            className="flex flex-wrap max-sm:text-center gap-20  justify-center mb-10">
             <div className="group">
               <div className="pl-2 w-[100px] group-hover:-scale-x-100 duration-500 ">
                 <img src={homeBuy} alt="" width={100} />
@@ -272,8 +276,7 @@ export default function HomePage() {
           {/* -------------Next line-----------  */}
           <ScrollTrigger
             onEnter={() => setCounter(true)}
-            onExit={() => setCounter(false)}
-          >
+            onExit={() => setCounter(false)}>
             <div className="flex flex-wrap gap-28 justify-center  max-sm:pr-0 py-5 max-sm:pb-5">
               <div className="font-bold flex items-start py-10 max-sm:py-1 gap-4">
                 {counter && (
@@ -282,8 +285,7 @@ export default function HomePage() {
                       <div>
                         <span
                           ref={countUpRef}
-                          className="numbering  text-6xl text-red-500"
-                        ></span>
+                          className="numbering  text-6xl text-red-500"></span>
                       </div>
                     )}
                   </CountUp>
@@ -302,8 +304,7 @@ export default function HomePage() {
                       <div>
                         <span
                           ref={countUpRef}
-                          className="text-6xl text-red-500"
-                        ></span>
+                          className="text-6xl text-red-500"></span>
                       </div>
                     )}
                   </CountUp>
@@ -322,8 +323,7 @@ export default function HomePage() {
                       <div>
                         <span
                           ref={countUpRef}
-                          className="text-6xl text-red-500"
-                        ></span>
+                          className="text-6xl text-red-500"></span>
                       </div>
                     )}
                   </CountUp>
@@ -342,8 +342,7 @@ export default function HomePage() {
                       <div>
                         <span
                           ref={countUpRef}
-                          className="text-6xl text-red-500"
-                        ></span>
+                          className="text-6xl text-red-500"></span>
                       </div>
                     )}
                   </CountUp>
@@ -362,16 +361,14 @@ export default function HomePage() {
           <div
             data-aos="fade-up"
             data-aos-duration="1000"
-            className="text-center"
-          >
+            className="text-center">
             <p className="font-semibold text-red-500 ">OUR BENEFIT</p>
             <p className="font-bold text-3xl ">Why Choose Homeya</p>
           </div>
           <div
             data-aos="fade-right"
             data-aos-duration="1000"
-            className="flex flex-wrap justify-center gap-10 my-4 "
-          >
+            className="flex flex-wrap justify-center gap-10 my-4 ">
             <div className="text-center w-[400px]">
               <p className="pl-32 m-5 max-sm:pl-24">
                 <span className=" text-8xl ">
@@ -419,8 +416,7 @@ export default function HomePage() {
           <div
             data-aos="fade-up"
             data-aos-duration="1000"
-            className=" text-center "
-          >
+            className=" text-center ">
             <p className=" uppercase font-semibold text-red-500 py-2 ">
               top propertises
             </p>
@@ -432,8 +428,7 @@ export default function HomePage() {
             <div
               data-aos="fade-right"
               data-aos-duration="1000"
-              className=" mt-10 my-4 shadow-lg overflow-hidden  border-2 w-[600px] rounded-2xl"
-            >
+              className=" mt-10 my-4 shadow-lg overflow-hidden  border-2 w-[600px] rounded-2xl">
               <div className="overflow-hidden">
                 <div className="flex uppercase absolute z-10 items-center cursor-pointer ">
                   <h1 className="font-bold text-white text-lg bg-green-500 m-3 px-2 rounded-md ">
@@ -523,8 +518,7 @@ export default function HomePage() {
             <div
               data-aos="fade-up-right"
               data-aos-duration="1000"
-              className="   max-sm:mx-4"
-            >
+              className="   max-sm:mx-4">
               <ReviewCart />
             </div>
           </div>
@@ -534,8 +528,7 @@ export default function HomePage() {
         <div
           data-aos="fade-up"
           data-aos-duration="1000"
-          className="py-20 text-center"
-        >
+          className="py-20 text-center">
           <p className="text-red-500 font-semibold">OUR TEAM</p>
           <h1 className="text-3xl font-bold mb-10">Meet Our Agents</h1>
           <div className="flex gap-10 justify-center">{Team}</div>
