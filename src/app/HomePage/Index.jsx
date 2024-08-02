@@ -72,9 +72,9 @@ export default function HomePage() {
         <Header />
       </header>
       <hero>
-        <div className="heroimg ">
-          <div className=" text-center pt-[300px] px-10 text-white ">
-            <div className="h-[174px] font-bold text-7xl max-sm:text-4xl max-sm:h-[100px] max-sm:flex-col flex gap-2 justify-center">
+        <div className="heroimg">
+          <div className=" text-center pt-[300px] px-10 text-white mx-auto ">
+            <div className="h-[174px] font-bold text-7xl  flex gap-2 justify-center">
               <h1>Find Your</h1>
               <section class="animation">
                 <div>
@@ -115,7 +115,7 @@ export default function HomePage() {
               })}
             </div>
             {/* find propertise section  -----start---------- */}
-            <form className="flex flex-wrap max-sm:flex-col max-sm:h-52 font-semibold w-[90%] rounded-lg bg-white justify-between mx-[5%] text-black m-[-4px] h-24  text-left">
+            <form className="flex flex-wrap max-sm:flex-col max-sm:h-52 font-semibold w-[90%] rounded-lg bg-white justify-between mx-[5%] text-black m-[-4px] h-24  text-left bg-red-400">
               <div className="flex flex-1 gap-4 w-full py-4 items-center ">
                 <div className="border-r-2  w-[29%] px-2">
                   <h1>Keyword</h1>
@@ -167,20 +167,18 @@ export default function HomePage() {
           <p className="text-1xl text-red-500">FEATURED PROPERTIES</p>
           <h1 className="text-3xl ">Recommended For You</h1>
         </div>
-        <div
-          data-aos="fade-up"
-          data-aos-duration="1000"
-          className="flex max-sm:ml-[150px] max-sm:flex-col justify-center gap-4 mb-5 ">
+        <div data-aos="fade-up" data-aos-duration="1000" className=" mb-5 ">
           <Buttons />
         </div>
-        <div className="flex flex-wrap  p-8">
+        {/* <div className="">
           <Cards />
-        </div>
+        </div> */}
         <div className="text-center mb-20">
           <button className="bg-red-500 text-white font-bold p-4 w-[200px] hover:bg-red-700 rounded-lg ">
             View All Properties
           </button>
         </div>
+
         {/* --------------location section ------------------ */}
         {/* <div className=" text-center mb-10 pt-20 pb-10 bg-[#F7F7F7]  ">
           <p className=" text-red-500 font-semibold  ">EXPLORE CITIES</p>
@@ -191,6 +189,7 @@ export default function HomePage() {
             <Cards2 />
           </div>
         </div> */}
+
         {/* ---------our services------- */}
         <div>
           <div
@@ -212,7 +211,7 @@ export default function HomePage() {
           </div>
 
           <div
-            data-aos="fade-left"
+            data-aos="fade-right"
             data-aos-duration="1000"
             className="flex flex-wrap max-sm:text-center gap-20  justify-center mb-10">
             <div className="group">

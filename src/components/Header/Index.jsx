@@ -22,9 +22,9 @@ export default function Header() {
   const handleClose = () => {
     if (handleLogin) {
       setlogin(false);
-    } 
+    }
 
-    if(handleSignup){
+    if (handleSignup) {
       setSignup(false);
     }
   };
@@ -84,8 +84,7 @@ export default function Header() {
           <button>Login</button>/<button>Register</button>
           <button
             type="Submit"
-            className="bg-red-500 hover:bg-red-700 text-white pl-3 pr-3 pt-2 pb-2 ml-3"
-          >
+            className="bg-red-500 hover:bg-red-700 text-white pl-3 pr-3 pt-2 pb-2 ml-3">
             Submit Property
           </button>
         </div>
@@ -124,8 +123,7 @@ export default function Header() {
 
         <button
           type="Submit"
-          className="bg-red-500 hover:bg-red-700 text-white pl-3 pr-3 pt-2 pb-2 ml-3"
-        >
+          className="bg-red-500 hover:bg-red-700 text-white pl-3 pr-3 pt-2 pb-2 ml-3">
           Submit Property
         </button>
       </div>
