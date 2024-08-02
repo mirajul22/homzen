@@ -8,7 +8,7 @@ export default function Signup({handleClose}) {
   },[])
   return (
     <div className="popup">
-          <div data-aos="zoom-in" className="absolute right-[35%]  top-[50%]  py-10 p-8 rounded-xl bg-[#f1f1f1] border-2 w-[500px] ">
+          <div data-aos="zoom-in" className="absolute right-[35%]  top-[50%]  py-10 p-8 rounded-xl bg-[#f1f1f1] border-2 w-[500px] max-sm:right-2 max-sm:top-16 max-sm:w-[400px] ">
             <div onClick={handleClose}  className="close-btn absolute right-4 top-2 text-4xl">
               &times;
             </div>

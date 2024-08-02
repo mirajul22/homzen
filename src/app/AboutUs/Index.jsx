@@ -31,7 +31,7 @@ export default function AboutUs() {
       </header>
 
       <main>
-        <div className="bg-[#f7f7f7] font-bold text-5xl max-sm:text-3xl max-sm:h-20 text-center py-32">
+        <div className="bg-[#f7f7f7] font-bold text-5xl  text-center py-32 max-sm:py-20 max-sm:w-full max-sm:justify-center ">
           <h1>About Us </h1>
         </div>
         {/* --------------section start---------------- */}
@@ -40,8 +40,8 @@ export default function AboutUs() {
           data-aos-duration="1000"
           className="my-20 justify-center "
         >
-          <div className="flex flex-wrap  max-sm:text-center justify-center gap-36 items-center">
-            <h1 className="text-5xl w-[350px] font-bold ">
+          <div className="flex flex-wrap  max-sm:text-center max-sm:gap-10 justify-center gap-36 items-center">
+            <h1 className="text-5xl w-[380px] font-bold ">
               Welcome To The Homzen
             </h1>
             <p className="w-[750px] max-sm:w-full text-lg text-[#6f6f6f]">
@@ -60,7 +60,7 @@ export default function AboutUs() {
           <div
             data-aos="fade-up-right"
             data-aos-duration="1000"
-            className="backimg my-10 max-sm:my-5 w-[1250px] justify-center h-[500px] rounded-3xl mx-auto"
+            className="backimg my-10  max-sm:my-2 w-[1250px] mx-auto h-[500px] rounded-3xl max-sm:w-[380px] max-sm:justify-center"
           >
             <div className=" mx-[48%] py-48">
               <Link className="text-8xl  ">
@@ -72,16 +72,16 @@ export default function AboutUs() {
           </div>
         </div>
         {/*  --------------why choose us ------------------ */}
-        <div className="flex flex-wrap justify-center gap-24 items-center my-10 ">
+        <div className="flex flex-wrap justify-center gap-24 items-center my-10 max-sm:my-2 max-sm:gap-5 ">
           <div
-            data-aos="fade-left"
+            data-aos="fade-right"
             data-aos-duration="1000"
-            className="m-10 items-center w-[500px]"
+            className="m-10 items-center w-[500px] max-sm:w-full max-sm:justify-center"
           >
             <p className="font-bold uppercase text-red-500 text-lg">
               why choose us
             </p>
-            <h1 className=" capitalize font-bold capi text-3xl my-4">
+            <h1 className=" capitalize font-bold text-3xl my-4">
               discover what sets our real <br /> estate expertise apart
             </h1>
             <p>
@@ -107,13 +107,13 @@ export default function AboutUs() {
             </div>
             <Link
               to="/contact_us"
-              className="flex items-center underline  font-bold "
+              className="flex flex-wrap items-center underline  font-bold "
             >
               Contact Us
               <IoIosArrowRoundForward className="text-red-500 hover:translate-x-4 text-xl" />
             </Link>
           </div>
-          <p className="mr-20 ">
+          <p className="mr-20 max-sm:mr-0 ">
             <CartChoose />
           </p>
         </div>
@@ -134,8 +134,8 @@ export default function AboutUs() {
         {/* --------------partners ---------- */}
         <Partners />
         {/* --------------our team ------------ */}
-        <div data-aos="fade-up" data-aos-duration="1000">
-          <p className="font-bold text-center uppercase text-md text-red-500">
+        <div data-aos="fade-up" data-aos-duration="1000" className="max-sm:mt-10">
+          <p className="font-bold text-center uppercase text-md text-red-500 ">
             our team
           </p>
           <h1 className="font-bold text-center text-3xl my-4 ">
@@ -149,9 +149,9 @@ export default function AboutUs() {
         <div
           data-aos="fade-up"
           data-aos-duration="1000"
-          className="w-[1250px] mx-auto"
+          className="w-[1250px] max-sm:w-[380px]  mx-auto"
         >
-          <div className=" flex flex-wrap items-center font-bold pl-12 bg-[#e1e1e1] my-20  rounded-3xl ">
+          <div className=" flex flex-wrap items-center font-bold pl-12 max-sm:pl-4 bg-[#e1e1e1] my-20  rounded-3xl ">
             <div>
               <p className="uppercase text-md text-red-500 py-4">
                 become partners

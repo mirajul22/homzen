@@ -25,7 +25,7 @@ export default function Faqs() {
                   [index]: !show[index],
                 });
               }}
-              className=" flex justify-between rounded-xl text-xl max-sm:w-full max-sm:text-lg max-sm:py-2 max-sm:mx-4 font-bold border-2 w-1/2 ml-[25%] py-4 px-3"
+              className=" flex justify-between rounded-xl text-xl max-sm:w-full max-sm:text-lg max-sm:py-2 max-sm:mx-4 font-bold border-2 w-1/2 mx-auto py-4 px-3"
             >
               {ques.ques}
               <p className="text-3xl items-center max-sm:text-lg  ">
@@ -34,7 +34,7 @@ export default function Faqs() {
             </div>
 
             {show[index] && (
-              <p className="justify-between text-xl max-sm:text-sm max-sm:w-[350px] max-sm:ml-5 text-[#6f6f6f] border-2 w-1/2 ml-[25%] py-4 px-3">
+              <p className="justify-between text-xl max-sm:text-sm max-sm:w-full max-sm:ml-4 text-[#6f6f6f] border-2 w-1/2 ml-[25%] py-4 px-3">
                 {ques.ans}
               </p>
             )}

@@ -6,7 +6,7 @@
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    z-index: 123;
+    z-index: 10;
 }
 
 .animation {

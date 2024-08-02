@@ -32,9 +32,9 @@ useEffect(()=>{
         <CartOurServices/>
         </div>
         {/* --------------Review Section ----------------- */}
-        <div className="bg-[#f7f7f7] mx-auto py-20">
+        <div className="bg-[#f7f7f7] mx-auto py-20 max-sm:py-10">
           <div className="flex flex-wrap justify-center ">
-            <div data-aos="fade-left">
+            <div data-aos="fade-right">
               <p className="text-red-500 font-semibold">TOP PROPERTISE</p>
               <h1 className="text-3xl font-bold py-4">
                 What's People
@@ -70,7 +70,7 @@ useEffect(()=>{
         </div>
         {/* ------------------Become Partners=------------------- */}
         <div>
-          <div data-aos="fade-right" className=" flex flex-wrap max-sm:pl-10 w-[1250px] items-center font-bold pl-10 bg-[#f7f7f7] my-20 mx-auto rounded-3xl ">
+          <div data-aos="fade-right" className=" flex flex-wrap max-sm:pl-10 w-[1250px] max-sm:w-[380px] items-center font-bold pl-10 bg-[#f7f7f7] my-20 mx-auto rounded-3xl ">
             <div>
               <p className="uppercase text-md text-red-500 py-4">
                 become partners

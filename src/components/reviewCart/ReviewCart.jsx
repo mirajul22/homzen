@@ -11,9 +11,9 @@ export default function ReviewCart() {
   },[]);
 
   return (
-    <div className="flex flex-1 gap-5 w-full ">
+    <div className="flex flex-wrap gap-5 w-full ">
       {cartData.map((data) => (
-        <div data-aos="fade-right" data-aos-duration="1000" className="w-[450px] p-4 max-sm:w-[350px] rounded-2xl bg-white">
+        <div data-aos="fade-right" data-aos-duration="1000" className="w-[400px]  p-4 max-sm:w-[360px] rounded-2xl bg-white">
           <span className="flex text-yellow-500 gap-2 text-2xl py-2">
             <FaStar />
             <FaStar />

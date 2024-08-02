@@ -29,7 +29,7 @@ export default function Cards() {
     <div className="flex flex-wrap justify-center gap-10 ">
       {CardsData.map((data) => (
         <div
-          data-aos="fade-left"
+          data-aos="fade-right"
           data-aos-duration="1000"
           className=" block group group-hover:overflow-hidden shadow-xl w-[400px] pb-4 max-sm:w-[350px]   border-2 rounded-xl"
         >
@@ -107,29 +107,29 @@ function Cards2() {
 
 function Cards3() {
   return (
-    <div className="rounded-xl flex border-2 shadow-lg overflow-hidden w-[600px] mb-5 hover:scale-105 duration-500">
-      <div className="backimg w-[250px] h-[200px] font-bold text-base p-2">
+    <div className="rounded-xl flex border-2 shadow-lg overflow-hidden w-[600px] max-sm:w-[380px]  mb-5  hover:scale-105 duration-500">
+      <div className="backimg w-[250px] h-[220px] font-bold text-base p-2">
         <p className="bg-green-500 w-24 px-2 rounded-md text-white">FEATURED</p>
         <p className=" bg-white w-24 rounded-md text-center  mt-1">FOR SALE</p>
-        <p className="bg-white w-20 mt-28  px-4 rounded-md">House</p>
+        <p className="bg-white w-20 mt-28 max-sm:mt-32 px-4 rounded-md">House</p>
       </div>
-      <div className=" p-3">
-        <h1 className="font-bold hover:text-red-500 text-lg pb-2">
+      <div className=" p-3 max-sm:p-1">
+        <h1 className="font-bold hover:text-red-500 text-lg pb-2 max-sm:pb-0">
           Case Lomas De Machali Machas
         </h1>
-        <p className="flex gap-2 pb-2 items-center">
+        <p className="flex gap-2 pb-2   items-center max-sm:pb-0 max-sm:text-sm max-sm: ">
           <IoLocationOutline /> 33 Maple Street, San Francisco, California
         </p>
-        <ul className="flex justify-between mr-8 mt-2 text-2xl pb-4 ">
-          <li className="flex gap-4">
+        <ul className="flex justify-between mr-8 mt-2 text-2xl pb-4 max-sm:text-lg ">
+          <li className="flex gap-4 max-sm:gap-1 max-sm:items-center">
             <PiBedLight />
             <span className=" text-base font-bold">3</span>
           </li>
-          <li className="flex gap-4">
+          <li className="flex gap-4 max-sm:gap-1 max-sm:items-center">
             <PiBathtubThin />
             <span className=" text-base font-bold">2</span>
           </li>
-          <li className="flex gap-4">
+          <li className="flex gap-4 max-sm:gap-1 max-sm:items-center">
             <CiRuler />
             <span className=" text-base font-bold">600 sqFT</span>
           </li>
@@ -140,11 +140,11 @@ function Cards3() {
             <div className="w-10 h-10 rounded-full overflow-hidden">
               <img src={user} alt="" />
             </div>
-            <p>Ralph Edward</p>
+            <p className="max-sm:text-sm">Ralph Edward</p>
           </div>
-          <div className="flex">
-            <p className="font-bold">$5050.00 </p>
-            <span>/SqFT</span>
+          <div className="flex flex-wrap">
+            <p className="font-bold max-sm:text-lg">$5050.00 </p>
+            <span className="max-sm:text-xs">/SqFT</span>
           </div>
         </div>
       </div>
@@ -241,8 +241,8 @@ function CartOurServices() {
               : "group text-center p-10  w-[400px] max-sm:w-[350px] rounded-3xl hover:bg-[#f7f7f7] "
           }
         >
-          <p className="text-6xl px-20 py-5">
-          <div className="pl-8 group-hover:-scale-x-100 duration-500 ">
+          <p className="text-6xl px-20 py-5   ">
+          <div className="pl-8 max-sm:pl-2 group-hover:-scale-x-100 duration-500  ">
             <img src={d.image} alt="" width={100} />
           </div>
           </p>

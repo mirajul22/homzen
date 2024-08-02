@@ -5,8 +5,8 @@ import { FaFacebook, FaInstagram, FaPinterest, FaTwitter, FaYoutube } from "reac
 
 export default function Footer() {
   return (
-    <div className=" bg-gray-300 pt-5 ">
-      <div className=" flex  pb-4 justify-center gap-[800px] items-center font-bold ">
+    <div className=" w-full bg-gray-300 pt-5 ">
+      <div className=" flex flex-wrap  pb-4 justify-center gap-[800px] max-sm:gap-10 items-center font-bold ">
         <img className=" w-[174px] h-[42px]" src={logo} alt="" />
         <div className="flex items-center gap-2">
           <h1>Follow Us:</h1>
@@ -29,14 +29,14 @@ export default function Footer() {
       </div>
       <hr />
       {/* second section ---start---- */}
-      <div className="flex flex-wrap justify-center py-10 gap-24">
+      <div className="flex flex-wrap justify-center py-10 gap-24 max-sm:gap-4 max-sm:text-center">
         <div>
             <p>Specializes in providing high-class tours for those <br/> in need. Contact Us</p>
             <p>101 E 129th St, East Chicago, IN 46312, US</p>
             <p>1-333-345-6868</p>
             <p>themesflat@gmail.com</p>
         </div>
-        <div>
+        <div className="max-sm:w-[350px]">
             <h1 className="  font-bold">Categories</h1>
             <ul className="text-gray-600">
                 <li><Link to="/pricing">Pricing Plans</Link></li>
@@ -45,7 +45,7 @@ export default function Footer() {
                 <li><Link to="/contact_us">Contact Us</Link></li> 
             </ul>
         </div>
-        <div>
+        <div className="max-sm:w-[350px]">
             <h1 className=" font-bold">Our Company</h1>
             <ul className="text-gray-600">
                 <li><Link to="/sale">Property For Sale</Link></li>
@@ -54,7 +54,7 @@ export default function Footer() {
                 <li><Link to="/">Our Agents</Link></li> 
             </ul>
         </div>
-        <div>
+        <div className="max-sm:w-[350px]">
             <h1 className=" font-bold">Newsletter</h1>
             <p className="text-gray-600">Your Weekly/Monthly Dose of Knowledge and Inspiration</p>
             <p className="text-gray-600">Your email address</p>
@@ -63,7 +63,7 @@ export default function Footer() {
       <hr />
       {/* second section -----end---- */}
       {/* Third section -------start----------- */}
-      <div className="text-gray-600 flex py-5 justify-center gap-[650px]">
+      <div className="text-gray-600 flex flex-wrap py-5 justify-center gap-[650px] max-sm:gap-3">
         <p>©2024 Homzen. All Rights Reserved.</p>
         <ul className="flex gap-6">
             <li><Link to="/privacy_policy">Terms Of Services</Link></li>

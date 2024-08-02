@@ -25,7 +25,7 @@ useEffect(()=>{
         <div className="bg-[#f7f7f7] font-bold text-5xl max-sm:text-3xl max-sm:h-20 text-center py-32">
           <h1>Contact Us </h1>
         </div>
-        <div className="my-10 max-sm:my-4 justify-center flex  gap-10 ">
+        <div className="my-10 max-sm:py-2 justify-center flex flex-wrap gap-10  ">
           <form data-aos="fade-left" className=" w-[850px] " action="">
             <h1 className="text-4xl max-sm:text-3xl font-bold ">
               Drop Us A Line
@@ -84,7 +84,7 @@ useEffect(()=>{
               Send Message
             </button>
           </form>
-          <div data-aos="fade-right" className="w-[400px] shadow-xl  max-sm:m-0 max-sm:ml-5 max-sm:w-[350px] px-4  bg-[#f7f7f7] rounded-2xl ">
+          <div data-aos="fade-right" className="w-[400px] shadow-xl   max-sm:m-0 max-sm:w-[350px] px-4  bg-[#f7f7f7] rounded-2xl ">
             <h1 className="text-2xl font-bold m-4">Contact Us</h1>
             <h1 className="text-xl font-bold m-4 ">Address:</h1>
             <p className="text-lg m-4 ">
@@ -117,7 +117,7 @@ useEffect(()=>{
             </div>
           </div>
         </div>
-          <div data-aos="fade-up" className="w-[1300px] mb-10 mx-auto">
+          <div data-aos="fade-up" className="w-[1300px]  mb-10 mx-auto max-sm:w-[380px]">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2980.921295095439!2d-87.47479088884864!3d41.65744247908165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8811d94dda258cd5%3A0xa4c72b9eb15dd773!2s101%20E%20129th%20St%2C%20East%20Chicago%2C%20IN%2046312%2C%20USA!5e0!3m2!1sen!2sin!4v1722180158363!5m2!1sen!2sin"
               className="w-full h-[500px]"

@@ -9,7 +9,7 @@ export default function TeamCart(props) {
   },[])
   return (
     <>
-      <div data-aos="slide-right" data-aos-duration="1000" className=" w-[280px] group ">
+      <div data-aos="fade-right" data-aos-duration="1000" className=" w-[280px] group ">
         <div className="">
           <div className="overflow-hidden rounded-xl">
             <img

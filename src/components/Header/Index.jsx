@@ -34,22 +34,22 @@ export default function Header() {
   };
 
   return (
-    <div className="flex max-sm:flex-col  justify-between py-4 px-10 bg-white w-full fixed z-50">
+    <div className="flex max-sm:flex-col  justify-between max-sm:justify-center py-4 px-10 bg-white w-full fixed z-50">
       <div className="flex justify-between items-center">
         <img
-          className="w-[174px] h-[43px] max-sm:w-28 max-sm:h-8 max-sm:items-center"
+          className="w-[174px] h-[43px] max-sm:w-32 max-sm:h-8 max-sm:items-center"
           src={logo}
           alt=""
         />
         <div className=" sm:hidden">
           {navOpen ? (
             <RxCross2
-              className="text-2xl text-gray-500  cursor-pointer max-sm:text-lg"
+              className="text-2xl text-gray-500  cursor-pointer max-sm:text-3xl"
               onClick={handleNav}
             />
           ) : (
             <IoReorderThreeOutline
-              className="text-2xl text-gray-500  cursor-pointer max-sm:text-lg"
+              className="text-2xl text-gray-500  cursor-pointer max-sm:text-3xl"
               onClick={handleNav}
             />
           )}
@@ -81,7 +81,13 @@ export default function Header() {
       )}
       {navOpen && (
         <div className="font-bold max-sm:text-center">
-          <button>Login</button>/<button>Register</button>
+          <button onClick={handleLogin}>Login</button>
+          /<button onClick={handleSignup}>Register</button>
+          
+        {login ? <Login handleClose={handleClose} /> : ""}
+        {signup ? <Signup handleClose={handleClose} /> : ""}
+
+
           <button
             type="Submit"
             className="bg-red-500 hover:bg-red-700 text-white pl-3 pr-3 pt-2 pb-2 ml-3"

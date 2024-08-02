@@ -24,7 +24,8 @@ useEffect(()=>{
           <p className="text-red-500 font-bold text-md">PRICING</p>
           <h1 className="text-3xl my-4 font-bold ">Our Subscriptions</h1>
         </div>
-        <div className="flex flex-wrap justify-between gap-4 my-20 mx-8 max-sm:justify-center max-sm:mx-10">
+        
+        <div>
           <SubscriptionCart />
        
         </div>

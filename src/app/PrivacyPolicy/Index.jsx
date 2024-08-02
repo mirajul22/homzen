@@ -12,7 +12,7 @@ export default function PrivacyPolicy() {
     4: "false",
     5: "false",
   });
-
+//hello
   return (
     <div>
       <header>

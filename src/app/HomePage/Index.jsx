@@ -26,7 +26,6 @@ import { teamData } from "../../components/teamCart/teamData";
 import { IoLocationOutline } from "react-icons/io5";
 import user from "../../images/agent-1.jpg";
 import Aos from "aos";
-import "aos/dist/aos.css";
 import homeRent from "../../images/rent.png";
 import homeBuy from "../../images/buy (1).png";
 import homeSale from "../../images/for-sale.png";
@@ -51,6 +50,22 @@ export default function HomePage() {
     },
   ];
 
+  const HomeFecth = async () => {
+    try {
+      const data = await fetch(
+        "https://api-omega-hazel.vercel.app/fake-api/product"
+      );
+      const response = await data.json();
+      console.log("data =>", response);
+    } catch (error) {
+      console.log("api error =>", error);
+    }
+  };
+
+  useEffect(() => {
+    HomeFecth();
+  });
+
   //------------------------  our team section -------------------------
 
   const Team = teamData.map((d) => (
@@ -62,9 +77,9 @@ export default function HomePage() {
         <Header />
       </header>
       <hero>
-        <div className="heroimg ">
-          <div className=" text-center pt-[300px] px-10 text-white ">
-            <div className="h-[174px] font-bold text-7xl max-sm:text-4xl max-sm:h-[100px] max-sm:flex-col flex gap-2 justify-center">
+        <div className="heroimg max-sm:justify-center   ">
+          <div className="  text-center pt-[300px] max-sm:pt-[150px] px-10 text-white ">
+            <div className="flex flex-wrap h-[174px] font-bold text-7xl max-sm:text-4xl max-sm:h-[100px] gap-2 justify-center">
               <h1>Find Your</h1>
               <section class="animation">
                 <div>
@@ -79,7 +94,7 @@ export default function HomePage() {
               </section>
             </div>
             <div>
-              <p className="text-xl font-semibold">
+              <p className="text-xl max-sm:pt-6  font-semibold">
                 We are a real estate agency that will help you find the best
                 residence you <br /> dream of, let’s discuss for your dream
                 house?
@@ -106,26 +121,26 @@ export default function HomePage() {
               })}
             </div>
             {/* find propertise section  -----start---------- */}
-            <form className="flex flex-wrap max-sm:flex-col max-sm:h-52 font-semibold w-[90%] rounded-lg bg-white justify-between mx-[5%] text-black m-[-4px] h-24  text-left">
-              <div className="flex flex-1 gap-4 w-full py-4 items-center ">
-                <div className="border-r-2  w-[29%] px-2">
+            <form className="flex flex-wrap max-sm:h-[300px] font-semibold w-[90%]   rounded-lg bg-white justify-between mx-[5%] text-black m-[-4px] h-24  text-left">
+              <div className="flex flex-1 max-sm:flex-wrap gap-4 w-full py-4 items-center ">
+                <div className="border-r-2  w-[29%] max-sm:w-full px-2">
                   <h1>Keyword</h1>
                   <input
                     type="text"
                     placeholder="Search Keyword."
                     required
-                    className=" focus:outline-none"
+                    className=" focus:outline-none max-sm:w-full"
                   />
                 </div>
-                <div className="border-r-2  w-[29%] px-2">
+                <div className="border-r-2  w-[29%] max-sm:w-full px-2">
                   <h1>Location</h1>
                   <input
                     type="text"
                     placeholder="Search Location"
-                    className=" focus:outline-none"
+                    className=" focus:outline-none max-sm:w-full"
                   />
                 </div>
-                <div className="border-r-2  w-[29%] px-2">
+                <div className="border-r-2  w-[29%] max-sm:w-full px-2">
                   <h1>Type</h1>
                   <select className="w-full focus:outline-none rounded-md">
                     <option value="true">All</option>
@@ -135,14 +150,14 @@ export default function HomePage() {
                     <option value="house">House</option>
                   </select>
                 </div>
-                <div className="flex-1 text-center">
-                  <div className="text-2xl px-8">
+                <div className="flex-1 text-center max-sm:w-full  max-sm:flex">
+                  <div className="text-2xl px-8 max-sm:pt-2 max-sm:w-10 ">
                     <PiFaders />
                   </div>
                   Advanced
                 </div>
               </div>
-              <div className=" max-sm:my-4 max-sm:text-center text-xl max-sm:rounded-lg py-8 rounded-r-lg px-5 font-bold text-white bg-red-500 hover:bg-red-700 ">
+              <div className=" max-sm:my-4 max-sm:w-full max-sm:py-3 max-sm:text-center text-xl max-sm:rounded-lg py-8 rounded-r-lg px-5 font-bold text-white bg-red-500 hover:bg-red-700 ">
                 <button>Find Propertise</button>
               </div>
             </form>
@@ -154,7 +169,7 @@ export default function HomePage() {
         <div
           data-aos="fade-up"
           data-aos-duration="1000"
-          className="relative text-center font-bold mb-10 mt-20 "
+          className="relative w-full text-center font-bold mb-10 mt-20 "
         >
           <p className="text-1xl text-red-500">FEATURED PROPERTIES</p>
           <h1 className="text-3xl ">Recommended For You</h1>
@@ -162,7 +177,7 @@ export default function HomePage() {
         <div
           data-aos="fade-up"
           data-aos-duration="1000"
-          className="flex max-sm:ml-[150px] max-sm:flex-col justify-center gap-4 mb-5 "
+          className="flex justify-center gap-4 mb-5 "
         >
           <Buttons />
         </div>
@@ -189,10 +204,10 @@ export default function HomePage() {
           <div
             data-aos="fade-up"
             data-aos-duration="1000"
-            className="flex justify-center items-center p-4 gap-[900px]  pt-2"
+            className="flex flex-wrap justify-center items-center p-4 gap-[900px] max-sm:gap-10  pt-2"
           >
             <div>
-              <h1 className="text-red-500  font-semibold ">OUR SERVICES</h1>
+              <h1 className="text-red-500  font-semibold max-sm:text-center ">OUR SERVICES</h1>
               <h1 className="text-3xl font-bold">What We Do?</h1>
             </div>
             <Link
@@ -207,12 +222,12 @@ export default function HomePage() {
           </div>
 
           <div
-            data-aos="fade-left"
+            data-aos="fade-right"
             data-aos-duration="1000"
-            className="flex flex-wrap max-sm:text-center gap-20  justify-center mb-10"
+            className="flex flex-wrap max-sm:text-center gap-20 max-sm:gap-5  justify-center mb-10"
           >
             <div className="group">
-              <div className="pl-2 w-[100px] group-hover:-scale-x-100 duration-500 ">
+              <div className="pl-2 max-sm:ml-[120px] w-[100px] group-hover:-scale-x-100 duration-500 ">
                 <img src={homeBuy} alt="" width={100} />
               </div>
 
@@ -231,7 +246,7 @@ export default function HomePage() {
             </div>
 
             <div className="group">
-              <div className="pl-2 w-[100px] group-hover:-scale-x-100 duration-500 ">
+              <div className="pl-2 max-sm:ml-[120px] w-[100px] group-hover:-scale-x-100 duration-500 ">
                 <img src={homeRent} alt="" width={100} />
               </div>
 
@@ -250,7 +265,7 @@ export default function HomePage() {
             </div>
 
             <div className="group">
-              <div className="pl-2 w-[100px]  group-hover:-scale-x-100 duration-500 ">
+              <div className="pl-2 w-[100px] max-sm:ml-[120px] group-hover:-scale-x-100 duration-500 ">
                 <img src={homeSale} alt="" width={100} />
               </div>
 
@@ -274,7 +289,7 @@ export default function HomePage() {
             onEnter={() => setCounter(true)}
             onExit={() => setCounter(false)}
           >
-            <div className="flex flex-wrap gap-28 justify-center  max-sm:pr-0 py-5 max-sm:pb-5">
+            <div className="flex flex-wrap gap-28 max-sm:gap-20 justify-center  max-sm:pr-0 py-5 max-sm:pb-5">
               <div className="font-bold flex items-start py-10 max-sm:py-1 gap-4">
                 {counter && (
                   <CountUp start={0} end={85}>
@@ -373,7 +388,7 @@ export default function HomePage() {
             className="flex flex-wrap justify-center gap-10 my-4 "
           >
             <div className="text-center w-[400px]">
-              <p className="pl-32 m-5 max-sm:pl-24">
+              <p className="pl-32 m-5 max-sm:pl-32">
                 <span className=" text-8xl ">
                   <FaAward className=" cursor-pointer  " />
                 </span>
@@ -386,7 +401,7 @@ export default function HomePage() {
               </p>
             </div>
             <div className="text-center w-[400px]">
-              <p className="pl-32 m-5 max-sm:pl-24">
+              <p className="pl-32 m-5 max-sm:pl-32">
                 <span className=" text-8xl ">
                   <LiaPencilRulerSolid />
                 </span>
@@ -398,7 +413,7 @@ export default function HomePage() {
               </p>
             </div>
             <div className="text-center w-[400px]">
-              <p className="pl-32 m-5 max-sm:pl-24">
+              <p className="pl-32 m-5 max-sm:pl-32">
                 <span className=" text-8xl ">
                   <FaHandHoldingHand />
                 </span>
@@ -415,7 +430,7 @@ export default function HomePage() {
           </div>
         </div>
         {/* -------------------Top properties section------------------ */}
-        <div className="group my-20 max-sm:hidden ">
+        <div className="group my-20 ">
           <div
             data-aos="fade-up"
             data-aos-duration="1000"
@@ -430,7 +445,7 @@ export default function HomePage() {
           </div>
           <div className=" flex flex-wrap max-sm:mx-4 justify-center gap-10  ">
             <div
-              data-aos="fade-right"
+              data-aos="fade-in"
               data-aos-duration="1000"
               className=" mt-10 my-4 shadow-lg overflow-hidden  border-2 w-[600px] rounded-2xl"
             >
@@ -443,12 +458,12 @@ export default function HomePage() {
                     For Sale
                   </h1>
                 </div>
-                <div className="flex uppercase absolute z-10 items-center cursor-pointer pt-[310px] pl-2 ">
-                  <h1 className="font-semibold text-lg bg-white hover:bg-red-500 px-2 rounded-md  ">
+                <div className="flex uppercase absolute z-10 items-center cursor-pointer pt-[310px] max-sm:pt-[210px] pl-2 ">
+                  <h1 className="font-semibold text-lg bg-white hover:bg-red-500 px-2 rounded-md ">
                     Villa
                   </h1>
                 </div>
-                <div className=" group-hover:scale-110 h-[350px] duration-300 overflow-hidden">
+                <div className=" group-hover:scale-110 h-[350px] max-sm:h-[260px] duration-300 overflow-hidden">
                   <img src={house1} alt="" />
                 </div>
               </div>
@@ -490,7 +505,7 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-            <div className=" mt-10 ">
+            <div className=" mt-10 max-sm:mt-2 ">
               <Cards3 />
               <Cards3 />
               <Cards3 />
@@ -499,14 +514,14 @@ export default function HomePage() {
         </div>
         {/* --------------review section---------------------- */}
         <div className="bg-[#F7F7F7] py-20 ">
-          <div className="flex  justify-center gap-5 ">
-            <div data-aos="fade-left" data-aos-duration="1000">
+          <div className="flex flex-wrap  justify-center gap-5   ">
+            <div data-aos="fade-right" data-aos-duration="1000" className="">
               <p className="text-red-500 font-semibold">TOP PROPERTISE</p>
               <h1 className="text-3xl font-bold py-4">
                 What's People
                 <br /> Say's
               </h1>
-              <p className="w-[400px] pb-4">
+              <p className="w-[400px] max-sm:w-[350px] pb-4">
                 Our seasoned team excels in real estate with years of successful
                 market navigation, offering informed decisions and optimal
                 results.
@@ -523,7 +538,7 @@ export default function HomePage() {
             <div
               data-aos="fade-up-right"
               data-aos-duration="1000"
-              className="   max-sm:mx-4"
+              className=" max-sm:mx-4"
             >
               <ReviewCart />
             </div>
@@ -538,7 +553,7 @@ export default function HomePage() {
         >
           <p className="text-red-500 font-semibold">OUR TEAM</p>
           <h1 className="text-3xl font-bold mb-10">Meet Our Agents</h1>
-          <div className="flex gap-10 justify-center">{Team}</div>
+          <div className="flex flex-wrap gap-10 justify-center">{Team}</div>
         </div>
       </main>
 

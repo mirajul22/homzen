@@ -11,7 +11,7 @@ export default function Buttons() {
     5: false,
   });
   return (
-    <div className="flex gap-x-5  max-sm:flex-col cursor-pointer  ">
+    <div className="flex flex-wrap  gap-x-5  max-sm:flex-row max-sm:gap-2 max-sm:justify-center cursor-pointer  ">
       {buttonData.map((data, i) => (
         <Link to="/"> 
         <div

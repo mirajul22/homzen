@@ -15,7 +15,7 @@ export default function CartSubscription() {
     Aos.init({duration:1000})
   })
   return (
-    <div className="flex mx-auto gap-5">
+    <div className="flex flex-wrap justify-between gap-6 mx-auto max-sm:justify-center max-sm:mx-10">
       {subcriptionData.map((d, i) => {
         return (
           <div
