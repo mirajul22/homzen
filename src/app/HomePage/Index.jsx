@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {  useEffect, useState } from "react";
 import { PiFaders } from "react-icons/pi";
 import { FaArrowRight } from "react-icons/fa";
 import { LiaPencilRulerSolid } from "react-icons/lia";
@@ -19,27 +19,30 @@ import house1 from "../../images/house-1.jpg";
 import ReviewCart from "../../components/reviewCart/ReviewCart";
 import CountUp from "react-countup";
 import ScrollTrigger from "react-scroll-trigger";
-// import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
 import TeamCart from "../../components/teamCart/TeamCart";
 import { teamData } from "../../components/teamCart/teamData";
 import { IoLocationOutline } from "react-icons/io5";
 import user from "../../images/agent-1.jpg";
-import Aos from "aos";
 import homeRent from "../../images/rent.png";
 import homeBuy from "../../images/buy (1).png";
 import homeSale from "../../images/for-sale.png";
+import { useDispatch,useSelector } from "react-redux";
+import { fetchProduct } from "../../store/productSlice";
 
 export default function HomePage() {
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state);
   const [counter, setCounter] = useState(false);
   const [showBtn, setShowBtn] = useState({
     0: true,
     1: false,
   });
 
-  useEffect(() => {
-    Aos.init();
-  }, []);
+  useEffect(()=> {
+    dispatch(fetchProduct());
+  },[])
+
+  console.log(state)
 
   const dataBtn = [
     {
@@ -50,21 +53,6 @@ export default function HomePage() {
     },
   ];
 
-  const HomeFecth = async () => {
-    try {
-      const data = await fetch(
-        "https://api-omega-hazel.vercel.app/fake-api/product"
-      );
-      const response = await data.json();
-      console.log("data =>", response);
-    } catch (error) {
-      console.log("api error =>", error);
-    }
-  };
-
-  useEffect(() => {
-    HomeFecth();
-  });
 
   //------------------------  our team section -------------------------
 
@@ -77,8 +65,8 @@ export default function HomePage() {
         <Header />
       </header>
       <hero>
-        <div className="heroimg max-sm:justify-center   ">
-          <div className="  text-center pt-[300px] max-sm:pt-[150px] px-10 text-white ">
+        <div className="heroimg max-sm:justify-center ">
+          <div className=" text-center pt-[300px] max-sm:pt-[150px] px-10 text-white ">
             <div className="flex flex-wrap h-[174px] font-bold text-7xl max-sm:text-4xl max-sm:h-[100px] gap-2 justify-center">
               <h1>Find Your</h1>
               <section class="animation">
@@ -126,7 +114,7 @@ export default function HomePage() {
                 <div className="border-r-2  w-[29%] max-sm:w-full px-2">
                   <h1>Keyword</h1>
                   <input
-                    type="text"
+                    type="keyword"
                     placeholder="Search Keyword."
                     required
                     className=" focus:outline-none max-sm:w-full"
@@ -135,7 +123,7 @@ export default function HomePage() {
                 <div className="border-r-2  w-[29%] max-sm:w-full px-2">
                   <h1>Location</h1>
                   <input
-                    type="text"
+                    type="search"
                     placeholder="Search Location"
                     className=" focus:outline-none max-sm:w-full"
                   />
@@ -189,16 +177,6 @@ export default function HomePage() {
             View All Properties
           </button>
         </div>
-        {/* --------------location section ------------------ */}
-        {/* <div className=" text-center mb-10 pt-20 pb-10 bg-[#F7F7F7]  ">
-          <p className=" text-red-500 font-semibold  ">EXPLORE CITIES</p>
-          <h1 className="font-bold text-3xl">Our Location For You</h1>
-          <div className="flex flex-wrap gap-8  justify-between m-10">
-            <Cards2 />
-            <Cards2 />
-            <Cards2 />
-          </div>
-        </div> */}
         {/* ---------our services------- */}
         <div>
           <div

@@ -3,12 +3,12 @@ import { IoLocationOutline } from "react-icons/io5";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { FaCheckCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import house1 from "../../images/house-1.jpg";
-import house2 from "../../images/house-2.jpg";
-import house3 from "../../images/house-3.jpg";
-import house5 from "../../images/house-5.jpg";
-import house6 from "../../images/house-6.jpg";
-import house7 from "../../images/house-7.jpg";
+// import house1 from "../../images/house-1.jpg";
+// import house2 from "../../images/house-2.jpg";
+// import house3 from "../../images/house-3.jpg";
+// import house5 from "../../images/house-5.jpg";
+// import house6 from "../../images/house-6.jpg";
+// import house7 from "../../images/house-7.jpg";
 import user from "../../images/agent-1.jpg";
 import homeRent from "../../images/rent.png";
 import homeBuy from "../../images/buy (1).png";
@@ -20,14 +20,18 @@ import { CiRuler } from "react-icons/ci";
 import "./style.css";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import { useSelector } from "react-redux";
+// import { fetchProduct } from "../../store/productSlice";
 
 export default function Cards() {
+  const state = useSelector((state) => state);
+
   useEffect(() => {
     Aos.init();
   }, []);
   return (
     <div className="flex flex-wrap justify-center gap-10 ">
-      {CardsData.map((data) => (
+      {state.product.data && state.product.data.map((data) => (
         <div
           data-aos="fade-right"
           data-aos-duration="1000"
@@ -43,35 +47,35 @@ export default function Cards() {
           </div>
           <div className="flex uppercase absolute z-10 items-center cursor-pointer pt-[250px] pl-2 ">
             <h1 className="font-semibold text-sm bg-white hover:bg-red-500 px-2 rounded-md  ">
-              {data.category}
+              {data.types}
             </h1>
           </div>
 
-          <div className="h-[280px] overflow-hidden block ">
+          <div className="h-[280px] overflow-hidden  ">
+            <div className="overflow-hidden rounded-t-xl">
             <img
-              className=" block group-hover:scale-110 ease-linear duration-300  rounded-t-xl h-[280px] cursor-pointer"
-              src={data.image}
+              className=" group-hover:scale-110 ease-linear duration-300 h-[280px] cursor-pointer"
+              src={data.img}
               alt=""
-            />
+            /></div>
           </div>
           <div className=" p-4">
-            {/* <h1 className=" absolute   font-bold text-base text-center border-2 bg-red-500 rounded-xl shadow-md text-white"> {data.category} </h1> */}
             <h1 className="font-bold text-lg"> {data.title} </h1>
             <p className="flex gap-1 items-center">
-              <IoLocationOutline /> {data.location}
+              <IoLocationOutline /> {data.text}
             </p>
             <ul className="flex justify-between mr-8 mt-2 text-2xl ">
               <li className="flex gap-4">
                 <PiBedLight />
-                <span className=" text-base font-bold"> {data.bed} </span>
+                <span className=" text-base font-bold"> {data.bedroom} </span>
               </li>
-              <li className="flex gap-4">
+              <li className="flex gapm-4">
                 <PiBathtubThin />
-                <span className=" text-base font-bold"> {data.bath} </span>
+                <span className=" text-base font-bold"> {data.bathroom} </span>
               </li>
               <li className="flex gap-4">
                 <CiRuler />
-                <span className=" text-base font-bold">{data.SqFT} sqFT</span>
+                <span className=" text-base font-bold">{data.area[0]}</span>
               </li>
             </ul>
           </div>
@@ -94,21 +98,11 @@ export default function Cards() {
   );
 }
 
-function Cards2() {
-  return (
-    <div className="backimg h-[500px] w-[400px] shadow-md rounded-3xl">
-      <div className="text-left text-base font-semibold pt-[425px] pl-10 text-white">
-        <p>221 Prpperty</p>
-        <h1 className="text-2xl">Sydney, Australiya</h1>
-      </div>
-    </div>
-  );
-}
 
 function Cards3() {
   return (
     <div className="rounded-xl flex border-2 shadow-lg overflow-hidden w-[600px] max-sm:w-[380px]  mb-5  hover:scale-105 duration-500">
-      <div className="backimg w-[250px] h-[220px] font-bold text-base p-2">
+      <div className="backimg w-[250px]  font-bold text-base p-2">
         <p className="bg-green-500 w-24 px-2 rounded-md text-white">FEATURED</p>
         <p className=" bg-white w-24 rounded-md text-center  mt-1">FOR SALE</p>
         <p className="bg-white w-20 mt-28 max-sm:mt-32 px-4 rounded-md">House</p>
@@ -152,70 +146,70 @@ function Cards3() {
   );
 }
 
-export { Cards2, Cards3 };
+export { Cards3 };
 
-const CardsData = [
-  {
-    id: 1,
-    image: house1,
-    title: "Villa Del Mar Retreat, Malibu",
-    location: "72 Sunset Avenue, Los Angeles, California",
-    bed: 2,
-    bath: 2,
-    SqFT: 600,
-    category: "studio",
-  },
-  {
-    id: 2,
-    image: house2,
-    title: "Rancho Vista Verde, Santa Barbara",
-    location: "33 Maple Street, San Francisco, California",
-    bed: 4,
-    bath: 2,
-    SqFT: 600,
-    category: "apartment",
-  },
-  {
-    id: 3,
-    image: house3,
-    title: "Sunset Heights Estate, Beverly Hills",
-    location: "1040 Ocean, Santa Monica, California",
-    bed: 3,
-    bath: 2,
-    SqFT: 600,
-    category: "villa",
-  },
-  {
-    id: 4,
-    image: house7,
-    title: "Coastal Serenity Cottage",
-    location: "21 Hillside Drive, Beverly Hills, California",
-    bed: 4,
-    bath: 2,
-    SqFT: 600,
-    category: "house",
-  },
-  {
-    id: 5,
-    image: house5,
-    title: "Lakeview Haven, Lake Tahoe",
-    location: "8 Broadway, Brooklyn, New York",
-    bed: 2,
-    bath: 2,
-    SqFT: 600,
-    category: "office",
-  },
-  {
-    id: 6,
-    image: house6,
-    title: "Casa Lomas De Machalí Machas",
-    location: "33 Maple Street, San Francisco, California",
-    bed: 3,
-    bath: 2,
-    SqFT: 600,
-    category: "studio",
-  },
-];
+// const CardsData = [
+//   {
+//     id: 1,
+//     image: house1,
+//     title: "Villa Del Mar Retreat, Malibu",
+//     location: "72 Sunset Avenue, Los Angeles, California",
+//     bed: 2,
+//     bath: 2,
+//     SqFT: 600,
+//     category: "studio",
+//   },
+//   {
+//     id: 2,
+//     image: house2,
+//     title: "Rancho Vista Verde, Santa Barbara",
+//     location: "33 Maple Street, San Francisco, California",
+//     bed: 4,
+//     bath: 2,
+//     SqFT: 600,
+//     category: "apartment",
+//   },
+//   {
+//     id: 3,
+//     image: house3,
+//     title: "Sunset Heights Estate, Beverly Hills",
+//     location: "1040 Ocean, Santa Monica, California",
+//     bed: 3,
+//     bath: 2,
+//     SqFT: 600,
+//     category: "villa",
+//   },
+//   {
+//     id: 4,
+//     image: house7,
+//     title: "Coastal Serenity Cottage",
+//     location: "21 Hillside Drive, Beverly Hills, California",
+//     bed: 4,
+//     bath: 2,
+//     SqFT: 600,
+//     category: "house",
+//   },
+//   {
+//     id: 5,
+//     image: house5,
+//     title: "Lakeview Haven, Lake Tahoe",
+//     location: "8 Broadway, Brooklyn, New York",
+//     bed: 2,
+//     bath: 2,
+//     SqFT: 600,
+//     category: "office",
+//   },
+//   {
+//     id: 6,
+//     image: house6,
+//     title: "Casa Lomas De Machalí Machas",
+//     location: "33 Maple Street, San Francisco, California",
+//     bed: 3,
+//     bath: 2,
+//     SqFT: 600,
+//     category: "studio",
+//   },
+// ];
 
 // -----------------our services------------------
 
