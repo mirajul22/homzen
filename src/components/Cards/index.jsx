@@ -27,11 +27,12 @@ export default function Cards() {
   }, []);
   return (
     <div className="flex flex-wrap justify-center gap-10 ">
-      {CardsData.map((data) => (
+      {CardsData.map((data, index) => (
         <div
           data-aos="fade-left"
           data-aos-duration="1000"
-          className=" block group group-hover:overflow-hidden shadow-xl w-[400px] pb-4 max-sm:w-[350px]   border-2 rounded-xl">
+          className=" block group group-hover:overflow-hidden shadow-xl w-[400px] pb-4 max-sm:w-[350px]   border-2 rounded-xl"
+          key={index}>
           <div className="flex uppercase absolute z-10 items-center cursor-pointer ">
             <h1 className="font-bold text-white text-sm bg-green-500 m-3 px-2 rounded-md ">
               Featured
