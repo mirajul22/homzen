@@ -170,9 +170,9 @@ export default function HomePage() {
         <div data-aos="fade-up" data-aos-duration="1000" className=" mb-5 ">
           <Buttons />
         </div>
-        {/* <div className="">
+        <div className="">
           <Cards />
-        </div> */}
+        </div>
         <div className="text-center mb-20">
           <button className="bg-red-500 text-white font-bold p-4 w-[200px] hover:bg-red-700 rounded-lg ">
             View All Properties
