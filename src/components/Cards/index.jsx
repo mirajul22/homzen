@@ -31,73 +31,76 @@ export default function Cards() {
   }, []);
   return (
     <div className="flex flex-wrap justify-center gap-10 ">
-      {state.product.data && state.product.data.map((data) => (
-        <div
-          data-aos="fade-right"
-          data-aos-duration="1000"
-          className=" block group group-hover:overflow-hidden shadow-xl w-[400px] pb-4 max-sm:w-[350px]   border-2 rounded-xl"
-        >
-          <div className="flex uppercase absolute z-10 items-center cursor-pointer ">
-            <h1 className="font-bold text-white text-sm bg-green-500 m-3 px-2 rounded-md ">
-              Featured
-            </h1>
-            <h1 className="font-semibold text-sm bg-white hover:bg-red-500 px-2 rounded-md  ">
-              For Sale
-            </h1>
-          </div>
-          <div className="flex uppercase absolute z-10 items-center cursor-pointer pt-[250px] pl-2 ">
-            <h1 className="font-semibold text-sm bg-white hover:bg-red-500 px-2 rounded-md  ">
-              {data.types}
-            </h1>
-          </div>
+      {state.product.data &&
+        state.product.data.map((data) => (
+          <div
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            className=" block group group-hover:overflow-hidden shadow-xl w-[400px] pb-4 max-sm:w-[350px]   border-2 rounded-xl">
+            <div className="flex uppercase absolute z-10 items-center cursor-pointer ">
+              <h1 className="font-bold text-white text-sm bg-green-500 m-3 px-2 rounded-md ">
+                Featured
+              </h1>
+              <h1 className="font-semibold text-sm bg-white hover:bg-red-500 px-2 rounded-md  ">
+                For {data.services}
+              </h1>
+            </div>
+            <div className="flex uppercase absolute z-10 items-center cursor-pointer pt-[250px] pl-2 ">
+              <h1 className="font-semibold text-sm bg-white hover:bg-red-500 px-2 rounded-md  ">
+                {data.types}
+              </h1>
+            </div>
 
-          <div className="h-[280px] overflow-hidden  ">
-            <div className="overflow-hidden rounded-t-xl">
-            <img
-              className=" group-hover:scale-110 ease-linear duration-300 h-[280px] cursor-pointer"
-              src={data.img}
-              alt=""
-            /></div>
-          </div>
-          <div className=" p-4">
-            <h1 className="font-bold text-lg"> {data.title} </h1>
-            <p className="flex gap-1 items-center">
-              <IoLocationOutline /> {data.text}
-            </p>
-            <ul className="flex justify-between mr-8 mt-2 text-2xl ">
-              <li className="flex gap-4">
-                <PiBedLight />
-                <span className=" text-base font-bold"> {data.bedroom} </span>
-              </li>
-              <li className="flex gapm-4">
-                <PiBathtubThin />
-                <span className=" text-base font-bold"> {data.bathroom} </span>
-              </li>
-              <li className="flex gap-4">
-                <CiRuler />
-                <span className=" text-base font-bold">{data.area[0]}</span>
-              </li>
-            </ul>
-          </div>
-          <hr />
-          <div className="flex items-center py-2 px-4 justify-between">
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-gray-200 rounded-full overflow-hidden">
-                <img src={user} alt="" />
+            <div className="h-[280px] overflow-hidden  ">
+              <div className="overflow-hidden rounded-t-xl">
+                <img
+                  className=" group-hover:scale-110 ease-linear duration-300 h-[280px] cursor-pointer"
+                  src={data.img}
+                  alt=""
+                />
               </div>
-              <h1 className="font-semibold text-gray-500">Ralph Edward</h1>
             </div>
-            <div className="flex font-bold items-center ">
-              <p className="font-extrabold text-xl">$7250,00</p>
-              <p className="text-gray-500">/SqFT</p>
+            <div className=" p-4">
+              <h1 className="font-bold text-lg"> {data.title} </h1>
+              <p className="flex gap-1 items-center">
+                <IoLocationOutline /> {data.text}
+              </p>
+              <ul className="flex justify-between mr-8 mt-2 text-2xl ">
+                <li className="flex gap-4">
+                  <PiBedLight />
+                  <span className=" text-base font-bold"> {data.bedroom} </span>
+                </li>
+                <li className="flex gapm-4">
+                  <PiBathtubThin />
+                  <span className=" text-base font-bold">
+                    {" "}
+                    {data.bathroom}{" "}
+                  </span>
+                </li>
+                <li className="flex gap-4">
+                  <CiRuler />
+                  <span className=" text-base font-bold">{data.area}</span>
+                </li>
+              </ul>
+            </div>
+            <hr />
+            <div className="flex items-center py-2 px-4 justify-between">
+              <div className="flex items-center gap-2">
+                <div className="w-10 h-10 bg-gray-200 rounded-full overflow-hidden">
+                  <img src={user} alt="" />
+                </div>
+                <h1 className="font-semibold text-gray-500">Ralph Edward</h1>
+              </div>
+              <div className="flex font-bold items-center ">
+                <p className="font-extrabold text-xl">$7250,00</p>
+                <p className="text-gray-500">/SqFT</p>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
     </div>
   );
 }
-
 
 function Cards3() {
   return (
@@ -105,7 +108,9 @@ function Cards3() {
       <div className="backimg w-[250px]  font-bold text-base p-2">
         <p className="bg-green-500 w-24 px-2 rounded-md text-white">FEATURED</p>
         <p className=" bg-white w-24 rounded-md text-center  mt-1">FOR SALE</p>
-        <p className="bg-white w-20 mt-28 max-sm:mt-32 px-4 rounded-md">House</p>
+        <p className="bg-white w-20 mt-28 max-sm:mt-32 px-4 rounded-md">
+          House
+        </p>
       </div>
       <div className=" p-3 max-sm:p-1">
         <h1 className="font-bold hover:text-red-500 text-lg pb-2 max-sm:pb-0">
@@ -233,12 +238,11 @@ function CartOurServices() {
             show[i]
               ? " group text-center p-10 w-[400px] max-sm:w-[350px] rounded-3xl bg-[#f7f7f7]"
               : "group text-center p-10  w-[400px] max-sm:w-[350px] rounded-3xl hover:bg-[#f7f7f7] "
-          }
-        >
+          }>
           <p className="text-6xl px-20 py-5   ">
-          <div className="pl-8 max-sm:pl-2 group-hover:-scale-x-100 duration-500  ">
-            <img src={d.image} alt="" width={100} />
-          </div>
+            <div className="pl-8 max-sm:pl-2 group-hover:-scale-x-100 duration-500  ">
+              <img src={d.image} alt="" width={100} />
+            </div>
           </p>
           <h1 className="text-2xl font-bold p-2">{d.title}</h1>
           <p className="p-2">{d.description}</p>
@@ -248,8 +252,7 @@ function CartOurServices() {
                 ? " m-4 font-bold  py-3 px-4 bg-red-500 text-white rounded-lg"
                 : " m-4 font-bold border-2 border-black py-3 px-4 rounded-lg group-hover:bg-red-500 group-hover:text-white group-hover:border-none"
             }
-            type="button"
-          >
+            type="button">
             {d.text}
           </button>
         </div>
@@ -265,7 +268,7 @@ const services = [
     description:
       "Discover your dream home effortlessly. Explore  diverse properties and expert guidance for a seamless buying experience.",
     text: "Find A Home",
-    image: homeBuy
+    image: homeBuy,
   },
 
   {
@@ -273,7 +276,7 @@ const services = [
     description:
       "Discover your dream home effortlessly. Explore diverse properties and expert guidance for a seamless buying experience.",
     text: "Find A Rental",
-    image: homeRent
+    image: homeRent,
   },
 
   {
@@ -281,7 +284,7 @@ const services = [
     description:
       "Discover your dream home effortlessly. Explore diverse properties and expert guidance for a seamless buying experience.",
     text: "Submit Property",
-    image: homeSale
+    image: homeSale,
   },
 ];
 
@@ -374,8 +377,7 @@ function CartSubscription() {
       <div>
         <button
           className="font-bold border-2 group-hover:border-none  py-2 px-10 my-4 border-black bg-white text-black "
-          type="button"
-        >
+          type="button">
           Choose The Package
         </button>
       </div>
@@ -417,8 +419,7 @@ function CartSubscription2() {
       <div>
         <button
           className="font-bold text-black border-2 border-none  py-2 px-8 m-4  bg-white "
-          type="button"
-        >
+          type="button">
           Choose The Package
         </button>
       </div>

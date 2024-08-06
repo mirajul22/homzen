@@ -1,4 +1,4 @@
-import React, {  useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { PiFaders } from "react-icons/pi";
 import { FaArrowRight } from "react-icons/fa";
 import { LiaPencilRulerSolid } from "react-icons/lia";
@@ -26,7 +26,7 @@ import user from "../../images/agent-1.jpg";
 import homeRent from "../../images/rent.png";
 import homeBuy from "../../images/buy (1).png";
 import homeSale from "../../images/for-sale.png";
-import { useDispatch,useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { fetchProduct } from "../../store/productSlice";
 
 export default function HomePage() {
@@ -38,11 +38,11 @@ export default function HomePage() {
     1: false,
   });
 
-  useEffect(()=> {
+  useEffect(() => {
     dispatch(fetchProduct());
-  },[])
+  }, []);
 
-  console.log(state)
+  console.log(state);
 
   const dataBtn = [
     {
@@ -52,7 +52,6 @@ export default function HomePage() {
       name: "FOR SALE",
     },
   ];
-
 
   //------------------------  our team section -------------------------
 
@@ -101,8 +100,7 @@ export default function HomePage() {
                       showBtn[i]
                         ? "p-5 text-lg rounded-md mr-1 bg-white text-black "
                         : "p-5 text-lg rounded-md mr-1  text-white bg-[hsla(0,0%,100%,.1)] "
-                    }
-                  >
+                    }>
                     {d.name}
                   </button>
                 );
@@ -157,16 +155,14 @@ export default function HomePage() {
         <div
           data-aos="fade-up"
           data-aos-duration="1000"
-          className="relative w-full text-center font-bold mb-10 mt-20 "
-        >
+          className="relative w-full text-center font-bold mb-10 mt-20 ">
           <p className="text-1xl text-red-500">FEATURED PROPERTIES</p>
           <h1 className="text-3xl ">Recommended For You</h1>
         </div>
         <div
           data-aos="fade-up"
           data-aos-duration="1000"
-          className="flex justify-center gap-4 mb-5 "
-        >
+          className="flex justify-center gap-4 mb-5 ">
           <Buttons />
         </div>
         <div className="flex flex-wrap  p-8">
@@ -182,16 +178,16 @@ export default function HomePage() {
           <div
             data-aos="fade-up"
             data-aos-duration="1000"
-            className="flex flex-wrap justify-center items-center p-4 gap-[900px] max-sm:gap-10  pt-2"
-          >
+            className="flex flex-wrap justify-center items-center p-4 gap-[900px] max-sm:gap-10  pt-2">
             <div>
-              <h1 className="text-red-500  font-semibold max-sm:text-center ">OUR SERVICES</h1>
+              <h1 className="text-red-500  font-semibold max-sm:text-center ">
+                OUR SERVICES
+              </h1>
               <h1 className="text-3xl font-bold">What We Do?</h1>
             </div>
             <Link
               to="./our_services"
-              className="flex items-center gap-2 underline font-semibold  "
-            >
+              className="flex items-center gap-2 underline font-semibold  ">
               View All Services
               <span className="text-red-500">
                 <FaArrowRight />
@@ -202,8 +198,7 @@ export default function HomePage() {
           <div
             data-aos="fade-right"
             data-aos-duration="1000"
-            className="flex flex-wrap max-sm:text-center gap-20 max-sm:gap-5  justify-center mb-10"
-          >
+            className="flex flex-wrap max-sm:text-center gap-20 max-sm:gap-5  justify-center mb-10">
             <div className="group">
               <div className="pl-2 max-sm:ml-[120px] w-[100px] group-hover:-scale-x-100 duration-500 ">
                 <img src={homeBuy} alt="" width={100} />
@@ -265,8 +260,7 @@ export default function HomePage() {
           {/* -------------Next line-----------  */}
           <ScrollTrigger
             onEnter={() => setCounter(true)}
-            onExit={() => setCounter(false)}
-          >
+            onExit={() => setCounter(false)}>
             <div className="flex flex-wrap gap-28 max-sm:gap-20 justify-center  max-sm:pr-0 py-5 max-sm:pb-5">
               <div className="font-bold flex items-start py-10 max-sm:py-1 gap-4">
                 {counter && (
@@ -275,8 +269,7 @@ export default function HomePage() {
                       <div>
                         <span
                           ref={countUpRef}
-                          className="numbering  text-6xl text-red-500"
-                        ></span>
+                          className="numbering  text-6xl text-red-500"></span>
                       </div>
                     )}
                   </CountUp>
@@ -295,8 +288,7 @@ export default function HomePage() {
                       <div>
                         <span
                           ref={countUpRef}
-                          className="text-6xl text-red-500"
-                        ></span>
+                          className="text-6xl text-red-500"></span>
                       </div>
                     )}
                   </CountUp>
@@ -315,8 +307,7 @@ export default function HomePage() {
                       <div>
                         <span
                           ref={countUpRef}
-                          className="text-6xl text-red-500"
-                        ></span>
+                          className="text-6xl text-red-500"></span>
                       </div>
                     )}
                   </CountUp>
@@ -335,8 +326,7 @@ export default function HomePage() {
                       <div>
                         <span
                           ref={countUpRef}
-                          className="text-6xl text-red-500"
-                        ></span>
+                          className="text-6xl text-red-500"></span>
                       </div>
                     )}
                   </CountUp>
@@ -355,16 +345,14 @@ export default function HomePage() {
           <div
             data-aos="fade-up"
             data-aos-duration="1000"
-            className="text-center"
-          >
+            className="text-center">
             <p className="font-semibold text-red-500 ">OUR BENEFIT</p>
             <p className="font-bold text-3xl ">Why Choose Homeya</p>
           </div>
           <div
             data-aos="fade-right"
             data-aos-duration="1000"
-            className="flex flex-wrap justify-center gap-10 my-4 "
-          >
+            className="flex flex-wrap justify-center gap-10 my-4 ">
             <div className="text-center w-[400px]">
               <p className="pl-32 m-5 max-sm:pl-32">
                 <span className=" text-8xl ">
@@ -412,8 +400,7 @@ export default function HomePage() {
           <div
             data-aos="fade-up"
             data-aos-duration="1000"
-            className=" text-center "
-          >
+            className=" text-center ">
             <p className=" uppercase font-semibold text-red-500 py-2 ">
               top propertises
             </p>
@@ -425,8 +412,7 @@ export default function HomePage() {
             <div
               data-aos="fade-in"
               data-aos-duration="1000"
-              className=" mt-10 my-4 shadow-lg overflow-hidden  border-2 w-[600px] rounded-2xl"
-            >
+              className=" mt-10 my-4 shadow-lg overflow-hidden  border-2 w-[600px] rounded-2xl">
               <div className="overflow-hidden">
                 <div className="flex uppercase absolute z-10 items-center cursor-pointer ">
                   <h1 className="font-bold text-white text-lg bg-green-500 m-3 px-2 rounded-md ">
@@ -516,8 +502,7 @@ export default function HomePage() {
             <div
               data-aos="fade-up-right"
               data-aos-duration="1000"
-              className=" max-sm:mx-4"
-            >
+              className=" max-sm:mx-4">
               <ReviewCart />
             </div>
           </div>
@@ -527,8 +512,7 @@ export default function HomePage() {
         <div
           data-aos="fade-up"
           data-aos-duration="1000"
-          className="py-20 text-center"
-        >
+          className="py-20 text-center">
           <p className="text-red-500 font-semibold">OUR TEAM</p>
           <h1 className="text-3xl font-bold mb-10">Meet Our Agents</h1>
           <div className="flex flex-wrap gap-10 justify-center">{Team}</div>
